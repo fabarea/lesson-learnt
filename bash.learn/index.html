@@ -1,0 +1,858 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>Bash - my hate-love donkey</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#my-hate-love-donkey" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Lesson learnt!" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Lesson learnt!
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Bash - my hate-love donkey
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Lesson learnt!" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Lesson learnt!
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="Fab" class="md-nav__link">
+      Fab
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bash - my hate-love donkey
+      </label>
+    
+    <a href="./" title="Bash - my hate-love donkey" class="md-nav__link md-nav__link--active">
+      Bash - my hate-love donkey
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#next-generation-unix-shell" class="md-nav__link">
+    Next generation UNIX shell.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fish" class="md-nav__link">
+    Fish
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    Alternatives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-loop-in-bash" class="md-nav__link">
+    How can I loop in bash?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-loop-around-files" class="md-nav__link">
+    How can I loop around files?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-increment-a-counter-in-a-loop" class="md-nav__link">
+    How do I increment a counter in a loop?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-write-function-with-a-returned-values" class="md-nav__link">
+    How do I write function with a returned values?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-little-collection-of-cool-unix-terminalconsolecurses-tools" class="md-nav__link">
+    A little collection of cool unix terminal/console/curses tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-bonnes-pratiques-dans-lecriture-de-scripts-en-bash" class="md-nav__link">
+    Quelques bonnes pratiques dans l'écriture de scripts en Bash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-good-practices" class="md-nav__link">
+    What are the good practices?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-how-to-check-if-script-runs-longer-than-2-hours" class="md-nav__link">
+    Example how to check if script runs longer than 2 hours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-keyboard-shortcuts" class="md-nav__link">
+    Bash Keyboard Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curly-bracket" class="md-nav__link">
+    Curly bracket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revue-des-techniques-de-programmation-en-shell" class="md-nav__link">
+    Revue des techniques de programmation en shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-bash-bible" class="md-nav__link">
+    Pure bash bible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperpolyglot" class="md-nav__link">
+    Hyperpolyglot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-fusion.learn/" title="BlockChain Fusion" class="md-nav__link">
+      BlockChain Fusion
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-gridcoin.learn/" title="BlockChain GridCoin" class="md-nav__link">
+      BlockChain GridCoin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-iot.learn/" title="BlockChain IoT" class="md-nav__link">
+      BlockChain IoT
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-talos.learn/" title="BlockChain Talos" class="md-nav__link">
+      BlockChain Talos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall iptables" class="md-nav__link">
+      Firewall iptables
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall.learn/" title="Firewall UFW" class="md-nav__link">
+      Firewall UFW
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes.learn/" title="Kubernetes - with MicroK8s" class="md-nav__link">
+      Kubernetes - with MicroK8s
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
+      Machine-learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python.learn/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sveltejs.learn/" title="SvelteJS" class="md-nav__link">
+      SvelteJS
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#next-generation-unix-shell" class="md-nav__link">
+    Next generation UNIX shell.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fish" class="md-nav__link">
+    Fish
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    Alternatives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-loop-in-bash" class="md-nav__link">
+    How can I loop in bash?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-loop-around-files" class="md-nav__link">
+    How can I loop around files?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-increment-a-counter-in-a-loop" class="md-nav__link">
+    How do I increment a counter in a loop?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-write-function-with-a-returned-values" class="md-nav__link">
+    How do I write function with a returned values?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-little-collection-of-cool-unix-terminalconsolecurses-tools" class="md-nav__link">
+    A little collection of cool unix terminal/console/curses tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-bonnes-pratiques-dans-lecriture-de-scripts-en-bash" class="md-nav__link">
+    Quelques bonnes pratiques dans l'écriture de scripts en Bash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-good-practices" class="md-nav__link">
+    What are the good practices?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-how-to-check-if-script-runs-longer-than-2-hours" class="md-nav__link">
+    Example how to check if script runs longer than 2 hours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-keyboard-shortcuts" class="md-nav__link">
+    Bash Keyboard Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curly-bracket" class="md-nav__link">
+    Curly bracket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revue-des-techniques-de-programmation-en-shell" class="md-nav__link">
+    Revue des techniques de programmation en shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-bash-bible" class="md-nav__link">
+    Pure bash bible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperpolyglot" class="md-nav__link">
+    Hyperpolyglot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="my-hate-love-donkey">My hate-love donkey</h1>
+<p>Bash is like a donkey - although I like these animals very much - very <strong>stuborn</strong> but at the same time <strong>very useful</strong>. Writing bash scripts is a quite a frustrating experience if I am honest. Bash makes things hard and inflexible. It looks however as a necessary pain since bash is installed and is the default shell on almost every distributions. This is the garantee that it will work. I am often looking for alternatives (such as <a href="https://www.oilshell.org/blog/2018/01/28.html">OSH shell</a>) or hoping bash would improve to offer a better user experience. We have <a href="https://itsfoss.com/bash-5-release/">bash 5</a> recently released but don't see any roadmap although the development looks active. Let see how it will evolve... </p>
+<p>Anyway here are a few notes and resources I gathered to make my life easier. Also, worth to be mentioned, <a href="https://plugins.jetbrains.com/plugin/4230-bashsupport/">the jetbrains bash plugin</a> is very useful associated with the bash linter. It provides many tips and tricks that an occasional "basher" would not know.</p>
+<h2 id="next-generation-unix-shell">Next generation UNIX shell.</h2>
+<p>See the man page.</p>
+<p><a href="https://github.com/ilyash/ngs/">https://github.com/ilyash/ngs/</a></p>
+<h2 id="fish">Fish</h2>
+<p>fish is a smart and user-friendly command line shell for OS X, Linux, and the
+rest of the family.</p>
+<p><a href="https://fishshell.com/">https://fishshell.com/</a></p>
+<h2 id="alternatives">Alternatives</h2>
+<ul>
+<li>
+<p>Next Generation Shell (NGS) - <a href="https://github.com/ilyash/ngs">https://github.com/ilyash/ngs</a></p>
+</li>
+<li>
+<p>Oil shell - <a href="http://www.oilshell.org/">http://www.oilshell.org/</a></p>
+</li>
+<li>
+<p>Web-Terminal is a terminal server that provides remote CLI via standard web
+    browser and HTTP protocol. - <a href="https://github.com/rabchev/web-terminal">https://github.com/rabchev/web-terminal</a></p>
+</li>
+</ul>
+<h2 id="how-can-i-loop-in-bash">How can I loop in bash?</h2>
+<p>There are various way to look. Here would be one way.</p>
+<pre><code class="bash">#!/bin/bash
+SOURCE_PATH=&quot;$HOME/pCloudDrive/Fabien/Notes&quot;
+
+files=(
+  'blockchain-fusion.learn.md'
+  'blockchain-gridcoin.learn.md'
+  'blockchain-iot.learn.md'
+  'blockchain-talos.learn.md'
+)
+
+# Set counter variable
+counter=0
+
+# shellcheck disable=SC2068
+for file in ${files[@]}; do
+
+  sourceFileNameAndPath=&quot;$SOURCE_PATH/$file&quot;
+
+  if [ -f &quot;$sourceFileNameAndPath&quot; ]; then
+    # ... do something here
+
+    # shellcheck disable=SC2004
+    counter=$(( $counter + 1 ))
+  fi
+done
+
+echo &quot;Done! Processed $counter files&quot;
+</code></pre>
+
+<h2 id="how-can-i-loop-around-files">How can I loop around files?</h2>
+<pre><code class="bash"># shellcheck disable=SC2231
+for file in /path/*.learn.md; do
+  # ... do something
+  echo &quot;$file&quot;
+done
+</code></pre>
+
+<h2 id="how-do-i-increment-a-counter-in-a-loop">How do I increment a counter in a loop?</h2>
+<pre><code class="bash">counter=0
+# shellcheck disable=SC2004
+counter=$(($counter + 1))
+</code></pre>
+
+<h2 id="how-do-i-write-function-with-a-returned-values">How do I write function with a returned values?</h2>
+<p>Simple function that will return a formatted current date:</p>
+<pre><code class="bash">function getCurrentDate() {
+  local currentDate
+
+  currentDate=$(date '+%m-%d-%Y @ %H:%M')
+  echo &quot;$currentDate&quot;
+}
+
+result=$(getCurrentDate)
+echo $result
+</code></pre>
+
+<p>Same as above but a bit more straightforward:</p>
+<pre><code class="bash">function getCurrentDate() {
+  date '+%m-%d-%Y @ %H:%M'
+}
+
+result=$(getCurrentDate)
+echo $result
+</code></pre>
+
+<h2 id="a-little-collection-of-cool-unix-terminalconsolecurses-tools">A little collection of cool unix terminal/console/curses tools</h2>
+<p><a href="http://kkovacs.eu/cool-but-obscure-unix-tools/">http://kkovacs.eu/cool-but-obscure-unix-tools/</a></p>
+<h2 id="quelques-bonnes-pratiques-dans-lecriture-de-scripts-en-bash">Quelques bonnes pratiques dans l'écriture de scripts en Bash</h2>
+<p><a href="http://ineumann.developpez.com/tutoriels/linux/bash-bonnes-pratiques/#LIII-C">http://ineumann.developpez.com/tutoriels/linux/bash-bonnes-pratiques/#LIII-C</a></p>
+<h2 id="what-are-the-good-practices">What are the good practices?</h2>
+<p>Define the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a></p>
+<pre><code class="sh">#!/usr/bin/env bash
+</code></pre>
+
+<p>Right below on the top:</p>
+<pre><code class="bash">set -e  # exit the script if any statement returns non-true return value 
+set -u  # abort on unbound variable
+set -o pipefail  # don't hide errors within pipes
+
+# Short version
+set -euo pipefail
+
+</code></pre>
+
+<p>Return a status code</p>
+<pre><code class="bash">exit $?
+</code></pre>
+
+<h2 id="example-how-to-check-if-script-runs-longer-than-2-hours">Example how to check if script runs longer than 2 hours</h2>
+<pre><code>    root\@srv123:/home/mstucki\# cat /etc/cron.hourly/kill-old-sphinx-tasks
+    \#!/bin/bash
+
+    if [ `id -u` != 0 ]; then echo "You are not root." exit 1 fi
+
+    USERNAME="mbless" COMMAND="sphinx-build" AGE=180
+
+    find /proc -maxdepth 1 -user $$USERNAME -type d -mmin +$$AGE -exec basename {} ;
+    \| xargs -r ps \| grep \$COMMAND \| awk '{print \$1}' \| while read PID; do echo
+    "Killing task: \$PID" echo
+    "======================================================" ps u \$PID echo
+    "======================================================" echo
+
+    kill $PID
+
+done
+</code></pre>
+<h2 id="bash-keyboard-shortcuts">Bash Keyboard Shortcuts</h2>
+<p>Yes, like on a piano! :musical_keyboard:</p>
+<p><a href="http://ss64.com/bash/syntax-keyboard.html">http://ss64.com/bash/syntax-keyboard.html</a></p>
+<h2 id="curly-bracket">Curly bracket</h2>
+<p><a href="http://www.linuxjournal.com/content/bash-brace-expansion">http://www.linuxjournal.com/content/bash-brace-expansion</a></p>
+<pre><code>{aa,bb,cc,dd}  =&gt; aa bb cc dd
+{0..12}        =&gt; 0 1 2 3 4 5 6 7 8 9 10 11 12
+{3..-2}        =&gt; 3 2 1 0 -1 -2
+{a..g}         =&gt; a b c d e f g
+{g..a}         =&gt; g f e d c b a
+</code></pre>
+<h2 id="cheat-sheet">Cheat sheet</h2>
+<p><a href="http://www.pixelbeat.org/cmdline.html">http://www.pixelbeat.org/cmdline.html</a></p>
+<p>https://bertvv.github.io/cheat-sheets/Bash.html</p>
+<h2 id="revue-des-techniques-de-programmation-en-shell">Revue des techniques de programmation en shell</h2>
+<p>Advanced concept there</p>
+<p>https://linuxfr.org/news/revue-des-techniques-de-programmation-en-shell (french)</p>
+<h2 id="pure-bash-bible">Pure bash bible</h2>
+<p>It looks some guy have smoke quite some strong stuff!</p>
+<p><a href="https://github.com/dylanaraps/pure-bash-bible">https://github.com/dylanaraps/pure-bash-bible</a></p>
+<h2 id="hyperpolyglot">Hyperpolyglot</h2>
+<p>Unix Shells: Bash, Fish, Ksh, Tcsh, Zsh. Syntax comparison</p>
+<p><a href="http://hyperpolyglot.org/unix-shells">http://hyperpolyglot.org/unix-shells</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../about/" title="Fab" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Fab
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../blockchain-fusion.learn/" title="BlockChain Fusion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                BlockChain Fusion
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

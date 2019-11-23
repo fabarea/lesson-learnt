@@ -1,0 +1,795 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>Kubernetes - with MicroK8s</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#my-next-questions" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Lesson learnt!" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Lesson learnt!
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Kubernetes - with MicroK8s
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Lesson learnt!" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Lesson learnt!
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="Fab" class="md-nav__link">
+      Fab
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bash.learn/" title="Bash - my hate-love donkey" class="md-nav__link">
+      Bash - my hate-love donkey
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-fusion.learn/" title="BlockChain Fusion" class="md-nav__link">
+      BlockChain Fusion
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-gridcoin.learn/" title="BlockChain GridCoin" class="md-nav__link">
+      BlockChain GridCoin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-iot.learn/" title="BlockChain IoT" class="md-nav__link">
+      BlockChain IoT
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-talos.learn/" title="BlockChain Talos" class="md-nav__link">
+      BlockChain Talos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall iptables" class="md-nav__link">
+      Firewall iptables
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall.learn/" title="Firewall UFW" class="md-nav__link">
+      Firewall UFW
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kubernetes - with MicroK8s
+      </label>
+    
+    <a href="./" title="Kubernetes - with MicroK8s" class="md-nav__link md-nav__link--active">
+      Kubernetes - with MicroK8s
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#is-kubernetes-the-right-tool" class="md-nav__link">
+    Is Kubernetes the right tool?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-install-heml-and-microk8s" class="md-nav__link">
+    How do I install heml and microk8s?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-you-show-me-basic-and-daily-command" class="md-nav__link">
+    Can you show me basic and daily command?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-a-service-microbot-example" class="md-nav__link">
+    How to deploy a service "microbot" example?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-a-service-hello-world-example" class="md-nav__link">
+    How to deploy a service "hello-world" example?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-expose-a-service" class="md-nav__link">
+    How do I expose a service?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-i-get-a-external-ip-pending" class="md-nav__link">
+    Why do I get a external IP "pending" ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-enable-ingress-on-microk8s" class="md-nav__link">
+    How do I enable Ingress on MicroK8s?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-uninstall-remove" class="md-nav__link">
+    How to uninstall / remove
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-do-i-find-my-configuration-file" class="md-nav__link">
+    Where do I find my configuration file?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-delete-an-application" class="md-nav__link">
+    How can I delete an application?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-service-types" class="md-nav__link">
+    What are service types?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
+      Machine-learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python.learn/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sveltejs.learn/" title="SvelteJS" class="md-nav__link">
+      SvelteJS
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#is-kubernetes-the-right-tool" class="md-nav__link">
+    Is Kubernetes the right tool?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-install-heml-and-microk8s" class="md-nav__link">
+    How do I install heml and microk8s?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-you-show-me-basic-and-daily-command" class="md-nav__link">
+    Can you show me basic and daily command?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-a-service-microbot-example" class="md-nav__link">
+    How to deploy a service "microbot" example?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-deploy-a-service-hello-world-example" class="md-nav__link">
+    How to deploy a service "hello-world" example?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-expose-a-service" class="md-nav__link">
+    How do I expose a service?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-i-get-a-external-ip-pending" class="md-nav__link">
+    Why do I get a external IP "pending" ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-enable-ingress-on-microk8s" class="md-nav__link">
+    How do I enable Ingress on MicroK8s?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-uninstall-remove" class="md-nav__link">
+    How to uninstall / remove
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-do-i-find-my-configuration-file" class="md-nav__link">
+    Where do I find my configuration file?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-delete-an-application" class="md-nav__link">
+    How can I delete an application?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-service-types" class="md-nav__link">
+    What are service types?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>Testing new tools and taking notes of my success / failures...</p>
+<!-- more -->
+
+<h1 id="my-next-questions">My Next questions?</h1>
+<ul>
+<li>How to install Helm?</li>
+</ul>
+<p><strong>Attention!</strong> It looks we must enable <code>helm</code> service in microk8s.helm</p>
+<ul>
+<li>How to configure my domain with Ingress? To be further tested. We have ingress.yaml file to be continued...</li>
+</ul>
+<p>Continue reading: https://hackernoon.com/expose-your-kubernetes-service-from-your-own-custom-domains-cc8a1d965f</p>
+<ul>
+<li>How to add an ssl certificate with Ingress</li>
+</ul>
+<p>https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/</p>
+<p>https://kubernetes.github.io/ingress-nginx/user-guide/tls/</p>
+<h2 id="is-kubernetes-the-right-tool">Is Kubernetes the right tool?</h2>
+<p>I am still experimenting and haven't decided yet if the overhead is worth the benefit. I am experimenting with <a href="https://microk8s.io/">MicroK8s</a> which looks promising in term of simplicity. Ideally I would like to also have it running on my local machine. While testing I am aiming to set up the following <strong>basic</strong> features:</p>
+<ul>
+<li>
+<p>Setup a frontend http server to serve / proxy my applications. Ingress controller! </p>
+</li>
+<li>
+<p>SSL certificate managed by <a href="https://letsencrypt.org/">Let's Encrypt</a>.</p>
+</li>
+</ul>
+<p>The installation process is quick and straightforward. I am following this tutorial <a href="https://tutorials.ubuntu.com/tutorial/install-a-local-kubernetes-with-microk8s#2">the online tutorial</a> provided by Ubuntu. It is well done and user-friendly to follow.</p>
+<h2 id="how-do-i-install-heml-and-microk8s">How do I install heml and microk8s?</h2>
+<pre><code class="bash">snap install microk8s --classic
+snap install helm --classic
+</code></pre>
+
+<p>Pay attention a few <code>ufw</code> must be enabled. </p>
+<h2 id="can-you-show-me-basic-and-daily-command">Can you show me basic and daily command?</h2>
+<p>Useful commands from the microk8s tutorial:</p>
+<pre><code class="bash"># Create an alias to kubectl. Useful for my case since I am running solely mircok8s
+snap alias microk8s.kubectl kubectl
+
+# List a bunch of enabled / disabled services
+microk8s.status
+
+# Enable a few addons: dashboard + dns
+microk8s.enable dns
+microk8s.enable dashboard
+
+# Big overview of the system
+# We can see IP address
+
+kubectl get all --all-namespaces
+
+# For now we only have private IP address.
+# If we want to access the dashboard we need to open a ssh tunnel
+# REPLACE IP 10.152.183 by the one displayed by the command above
+ssh pco2new -L 1443:10.152.183.1:443 -L 16443:127.0.0.1:16443
+
+# Show URLs
+kubectl cluster-info
+
+# To display the username / password
+kubectl config view
+microk8s.config (alternative)
+
+# Open the browser with tunnel enabled
+https://127.0.0.1:16443 (API - Kubernetes master is running)
+https://127.0.0.1:16443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+CoreDNS is running at 
+
+# Credentials that will be asked when loading the IP:443
+token=$(microk8s.kubectl -n kube-system get secret | grep default-token | cut -d &quot; &quot; -f1)
+microk8s.kubectl -n kube-system describe secret $token
+</code></pre>
+
+<h2 id="how-to-deploy-a-service-microbot-example">How to deploy a service "microbot" example?</h2>
+<p>We want do deploy a kind of "hello world" service</p>
+<pre><code class="bash"># Create the application
+kubectl create deployment microbot --image=dontrebootme/microbot:v1
+kubectl scale deployment microbot --replicas=2
+kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service
+
+# Check on which IP / port the pod was started
+microk8s.kubectl get all --all-namespaces
+
+# Useful commands
+kubectl get namespaces
+
+kubectl get all
+kubectl get all --all-namespaces
+
+kubectl get nodes # should be 1 with microk8s
+
+kubectl get pods
+kubectl get pods --output=wide
+
+kubectl get deployments
+kubectl describe deployments microbot
+
+kubectl get replicasets
+kubectl describe replicasets
+
+kubectl get services
+kubectl describe service microbot-services
+</code></pre>
+
+<h2 id="how-to-deploy-a-service-hello-world-example">How to deploy a service "hello-world" example?</h2>
+<pre><code class="bash">kubectl run hello-world --replicas=5 --labels=&quot;run=load-balancer-example&quot; --image=gcr.io/google-samples/node-hello:1.0  --port=8080
+
+# or
+kubectl apply -f https://k8s.io/examples/service/load-balancer-example.yaml
+</code></pre>
+
+<p>Rest of the tutorial:</p>
+<p>https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/</p>
+<h2 id="how-do-i-expose-a-service">How do I expose a service?</h2>
+<p>Exposing means accessible from the "outside". There are various ways actually. One would be the <code>LoadBalancer</code>. Notice however this  <strong>will not work</strong> with Microk8s since it is not a Kubkernetes Cloud provider. You will end up with a "external IP pending" error.</p>
+<pre><code class="bash">kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
+kubectl get services
+</code></pre>
+
+<h2 id="why-do-i-get-a-external-ip-pending">Why do I get a external IP "pending" ?</h2>
+<p>In this case, there is no LoadBalancer integrated (unlike AWS or Google Cloud). With this default setup, you can only use <a href="https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport"><code>NodePort</code></a> or an Ingress Controller.</p>
+<p>Source:</p>
+<p>https://stackoverflow.com/questions/44110876/kubernetes-service-external-ip-pending</p>
+<h2 id="how-do-i-enable-ingress-on-microk8s">How do I enable Ingress on MicroK8s?</h2>
+<p><strong>Pay attention</strong> the URL to install and download Ingress via  <code>mandatory.yaml</code> has changed from the tutorial. Read the doc here! Kubernetes chaos moving target it seems...</p>
+<p>https://github.com/nginxinc/kubernetes-ingress/blob/master/docs/installation.md</p>
+<pre><code class="bash">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+
+# We could also install it via it seems 
+helm install stable/nginx-ingress
+
+# Special command for microsk8s
+microk8s.enable ingress
+</code></pre>
+
+<p>Source:</p>
+<p>https://kndrck.co/posts/microk8s_ingress_example/</p>
+<p>https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html</p>
+<h2 id="how-to-uninstall-remove">How to uninstall / remove</h2>
+<pre><code class="bash">kubectl delete namespace ingress-nginx
+</code></pre>
+
+<p>There could be more steps if Prometheus is involved.</p>
+<h2 id="where-do-i-find-my-configuration-file">Where do I find my configuration file?</h2>
+<p>When using <code>Microk8s</code></p>
+<pre><code class="bash">nano /var/snap/microk8s/current/args/kube-apiserver
+</code></pre>
+
+<h2 id="how-can-i-delete-an-application">How can I delete an application?</h2>
+<pre><code>kubectl delete services my-service
+kubectl delete deployment hello-world
+</code></pre>
+
+<h2 id="what-are-service-types">What are service types?</h2>
+<ul>
+<li><code>ClusterIP</code>: Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default <code>ServiceType</code>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport"><code>NodePort</code></a>: Exposes the Service on each Node’s IP at a static port (the <code>NodePort</code>). A <code>ClusterIP</code> Service, to which the <code>NodePort</code> Service routes, is automatically created. You’ll be able to contact the <code>NodePort</code> Service, from outside the cluster, by requesting <code>:</code>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer"><code>LoadBalancer</code></a>: Exposes the Service externally using a cloud provider’s load balancer. <code>NodePort</code> and <code>ClusterIP</code> Services, to which the external load balancer routes, are automatically created.</li>
+</ul>
+<p>Source:</p>
+<p>https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../firewall.learn/" title="Firewall UFW" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Firewall UFW
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../machine-learning.learn/" title="Machine-learning" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Machine-learning
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
