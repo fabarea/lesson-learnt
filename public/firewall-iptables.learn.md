@@ -1,6 +1,6 @@
 ---
 date: 2019-03-21T10:39:14.000Z
-title: Firewall iptables
+title: Firewall - iptables
 ---
 
 ## Commands IPTABLES

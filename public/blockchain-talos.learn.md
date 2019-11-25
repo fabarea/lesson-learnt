@@ -4,7 +4,7 @@ public: true
 tags:
   - blockchain
   - talos
-title: BlockChain Talos
+title: BlockChain - Talos
 ---
 
 ## Comment créer un wallet sur Talos?

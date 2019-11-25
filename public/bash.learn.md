@@ -1,15 +1,15 @@
 ---
 date: 2019-11-21T11:34:32+01:00
-title: Bash - my hate-love donkey
+title: Bash - my stubborn donkey
 tags:
   - bash
   - shell
 ---
 
-My hate-love donkey
+My stubborn donkey
 ==========================
 
-Bash is like a donkey - although I like these animals very much - very **stuborn** but at the same time **very useful**. Writing bash scripts is a quite a frustrating experience if I am honest. Bash makes things hard and inflexible. It looks however as a necessary pain since bash is installed and is the default shell on almost every distributions. This is the garantee that it will work. I am often looking for alternatives (such as [OSH shell](https://www.oilshell.org/blog/2018/01/28.html)) or hoping bash would improve to offer a better user experience. We have [bash 5](https://itsfoss.com/bash-5-release/) recently released but don't see any roadmap although the development looks active. Let see how it will evolve... 
+Bash is like a donkey - although I like these animals very much - very **stubborn** but at the same time **very useful**. Writing bash scripts is a quite a frustrating experience if I am honest. Bash makes things hard and inflexible. It looks however as a necessary pain since bash is installed and is the default shell on almost every distributions. This is the garantee that it will work. I am often looking for alternatives (such as [OSH shell](https://www.oilshell.org/blog/2018/01/28.html)) or hoping bash would improve to offer a better user experience. We have [bash 5](https://itsfoss.com/bash-5-release/) recently released but don't see any roadmap although the development looks active. Let see how it will evolve... 
 
 Anyway here are a few notes and resources I gathered to make my life easier. Also, worth to be mentioned, [the jetbrains bash plugin](https://plugins.jetbrains.com/plugin/4230-bashsupport/) is very useful associated with the bash linter. It provides many tips and tricks that an occasional "basher" would not know.
 
@@ -84,6 +84,20 @@ for file in /path/*.learn.md; do
   echo "$file"
 done
 ```
+
+The same could be accomplished with:
+
+
+```bash
+#!/bin/bash
+
+find . -name "*.md" -depth 1 |
+while read filename
+do
+        echo "$filename"
+done
+```
+
 
 How do I increment a counter in a loop?
 ---------------------------------------

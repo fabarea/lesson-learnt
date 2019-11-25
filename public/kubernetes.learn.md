@@ -1,6 +1,6 @@
 ---
 date: 2019-11-21T12:51:39+01:00
-title: Kubernetes - with MicroK8s
+title: Kubernetes - MicroK8s
 ---
 
 Testing new tools and taking notes of my success / failures...
@@ -49,7 +49,7 @@ snap install helm --classic
 
 Pay attention a few `ufw` must be enabled. 
 
-Can you show me basic and daily command?
+Can you show me basic and daily commands?
 ----------------------------------------
 
 Useful commands from the microk8s tutorial:

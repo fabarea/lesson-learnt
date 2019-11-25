@@ -4,7 +4,7 @@ public: true
 tags:
   - blockchain
   - gridcoin
-title: BlockChain GridCoin
+title: BlockChain - GridCoin
 ---
 
 https://steemit.com/cryptocurrency/@daut44/gridcoin-setup-guide-for-mac-os-x-part-1

@@ -4,7 +4,7 @@ public: true
 tags:
   - blockchain
   - iot
-title: BlockChain IoT
+title: BlockChain - IoT
 ---
 
 ## Can I run the blockchain if device is offline?

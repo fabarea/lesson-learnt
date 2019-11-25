@@ -1,2 +1,4 @@
-.idea
-/site/*
+/site/
+/private/
+/legacy/
+/_ExportEvernoteWithAttachment/

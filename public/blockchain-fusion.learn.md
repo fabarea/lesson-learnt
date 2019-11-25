@@ -4,7 +4,7 @@ public: true
 tags:
   - blockchain
   - fusion
-title: BlockChain Fusion
+title: BlockChain - Fusion
 ---
 
 @see fusion.md in Notes
