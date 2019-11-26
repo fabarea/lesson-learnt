@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://fab.omic.ch/t3-bootstrap-package.learn/">
+        <link rel="canonical" href="https://fab.omic.ch/t3-install.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -415,6 +415,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typical-composerjson" class="md-nav__link">
+    Typical composer.json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-sync-my-files-with-the-production" class="md-nav__link">
+    How can I sync my files with the production?
+  </a>
+  
+</li>
+      
       
       
       
@@ -475,6 +489,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typical-composerjson" class="md-nav__link">
+    Typical composer.json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-sync-my-files-with-the-production" class="md-nav__link">
+    How can I sync my files with the production?
+  </a>
+  
+</li>
+      
       
       
       
@@ -491,12 +519,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/t3-bootstrap-package.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/t3-install.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                   <h1>Bootstrap-package-t3</h1>
                 
                 <p><strong>Beta quality! Rework content</strong></p>
+<p>There are various way to install TYPO3-</p>
+<p>TODO: DDEV... write something about it since I am using it intensively.</p>
 <h2 id="boostrap-package">Boostrap Package</h2>
 <pre><code># TYPO3 v9
 composer require bk2k/bootstrap-package
@@ -522,6 +552,17 @@ php vendor/bin/typo3cms install:setup \
     --site-setup-type=ebelaurore.ch
 </code></pre>
 <p>set TYPO3_CONTEXT Development php -S localhost:8000 -t public</p>
+<h2 id="typical-composerjson">Typical composer.json</h2>
+<p>https://github.com/TYPO3/minimal</p>
+<pre><code>composer require typo3/minimal
+</code></pre>
+
+<h2 id="how-can-i-sync-my-files-with-the-production">How can I sync my files with the production?</h2>
+<pre><code>rsync -av cuso:/sites/cuso.ch/htdocs/fileadmin htdocs/
+
+# Or with delete flag
+rsync -a --delete cuso:/sites/cuso.ch/htdocs/fileadmin htdocs/
+</code></pre>
                 
                   
                 
