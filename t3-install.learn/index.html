@@ -40,7 +40,7 @@
     
     
       
-        <title>Bootstrap-package-t3</title>
+        <title>TYPO3 - Install</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#boostrap-package" tabindex="1" class="md-skip">
+      <a href="#comment-installer-typo3" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Bootstrap-package-t3
+                TYPO3 - Install
               
             </span>
           
@@ -393,11 +393,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Bootstrap-package-t3
+        TYPO3 - Install
       </label>
     
-    <a href="./" title="Bootstrap-package-t3" class="md-nav__link md-nav__link--active">
-      Bootstrap-package-t3
+    <a href="./" title="TYPO3 - Install" class="md-nav__link md-nav__link--active">
+      TYPO3 - Install
     </a>
     
       
@@ -407,6 +407,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-installer-typo3" class="md-nav__link">
+    Comment installer TYPO3?
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#boostrap-package" class="md-nav__link">
@@ -446,18 +453,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../t3-introduction.learn/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../t3.learn/" title="TYPO3 - knowledge base" class="md-nav__link">
       TYPO3 - knowledge base
     </a>
@@ -481,6 +476,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-installer-typo3" class="md-nav__link">
+    Comment installer TYPO3?
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#boostrap-package" class="md-nav__link">
@@ -522,10 +524,34 @@
                   <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/t3-install.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Bootstrap-package-t3</h1>
+                  <h1>TYPO3 - Install</h1>
                 
                 <p><strong>Beta quality! Rework content</strong></p>
 <p>There are various way to install TYPO3-</p>
+<h2 id="comment-installer-typo3">Comment installer TYPO3?</h2>
+<ul>
+<li>Clone du Core + ddev
+  https://docs.typo3.org/m/typo3/guide-contributionworkflow/master/en-us/Appendix/SettingUpTypo3Ddev.html</li>
+<li>Incovénient: à tester si on ne peut pas faire un require de "typo3/cms-introduction"</li>
+<li>
+<p>Depuis composer.typo3.org, ensuite:</p>
+</li>
+<li>
+<p>composer create-project typo3/cms-base-distribution CmsBaseDistribution ^9</p>
+</li>
+<li>Si nécessaire récupérer une composer d'une autre version
+    https://github.com/TYPO3/TYPO3.CMS.BaseDistribution/
+    <code>composer update</code> si nécessaire</li>
+<li>ajouter / copier un ddev existant
+    <code>cp -r ~/Work/Ecodev/graduatecampus/.ddev .</code></li>
+<li>
+<p>composer require typo3/cms-introduction</p>
+</li>
+<li>
+<p>Depuis ce projet https://github.com/helhum/TYPO3-Distribution/</p>
+</li>
+<li>Inconvénient: opiniated distribution</li>
+</ul>
 <p>TODO: DDEV... write something about it since I am using it intensively.</p>
 <h2 id="boostrap-package">Boostrap Package</h2>
 <pre><code># TYPO3 v9
@@ -598,13 +624,13 @@ rsync -a --delete cuso:/sites/cuso.ch/htdocs/fileadmin htdocs/
           </a>
         
         
-          <a href="../t3-introduction.learn/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../t3.learn/" title="TYPO3 - knowledge base" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Introduction
+                TYPO3 - knowledge base
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
