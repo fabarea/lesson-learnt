@@ -1,68 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/bash-scaffold.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/bash.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/blockchain-fusion.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/blockchain-gridcoin.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/blockchain-iot.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/blockchain-talos.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/firewall-iptables.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/firewall-ufw.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/kubernetes.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/machine-learning.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/presentation-tools.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>None</loc>
-     <lastmod>2019-11-23</lastmod>
+     <loc>https://fab.omic.ch/python.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fab.omic.ch/sveltejs.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fab.omic.ch/t3-bootstrap-package.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fab.omic.ch/t3-introduction.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fab.omic.ch/t3.learn/</loc>
+     <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

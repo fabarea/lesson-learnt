@@ -1,0 +1,1739 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://fab.omic.ch/t3.learn/">
+      
+      
+        <meta name="author" content="Fabien Udriot">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>TYPO3 - knowledge base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#deprecation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://fab.omic.ch" title="Lesson learnt!" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Lesson learnt!
+            </span>
+            <span class="md-header-nav__topic">
+              
+                TYPO3 - knowledge base
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/fabarea/lesson-learnt/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://fab.omic.ch" title="Lesson learnt!" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Lesson learnt!
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/fabarea/lesson-learnt/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bash-scaffold.learn/" title="Bash - script scaffold" class="md-nav__link">
+      Bash - script scaffold
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bash.learn/" title="Bash - my stubborn donkey" class="md-nav__link">
+      Bash - my stubborn donkey
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-fusion.learn/" title="BlockChain - Fusion" class="md-nav__link">
+      BlockChain - Fusion
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-gridcoin.learn/" title="BlockChain - GridCoin" class="md-nav__link">
+      BlockChain - GridCoin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-iot.learn/" title="BlockChain - IoT" class="md-nav__link">
+      BlockChain - IoT
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-talos.learn/" title="BlockChain - Talos" class="md-nav__link">
+      BlockChain - Talos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
+      Firewall - iptables
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-nav__link">
+      Firewall - UFW
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes.learn/" title="Kubernetes - MicroK8s" class="md-nav__link">
+      Kubernetes - MicroK8s
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
+      Machine-learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../presentation-tools.learn/" title="Presentation Tools Web Slides" class="md-nav__link">
+      Presentation Tools Web Slides
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python.learn/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sveltejs.learn/" title="SvelteJS" class="md-nav__link">
+      SvelteJS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../t3-bootstrap-package.learn/" title="Bootstrap-package-t3" class="md-nav__link">
+      Bootstrap-package-t3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../t3-introduction.learn/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="TYPO3 - knowledge base" class="md-nav__link md-nav__link--active">
+      TYPO3 - knowledge base
+    </a>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/t3.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <p><strong>Beta quality! Rework content</strong></p>
+<p>This is where I repick code snippet</p>
+<p><a href="https://packagist.org/packages/bnf/typo3-middleware">https://packagist.org/packages/bnf/typo3-middleware</a></p>
+<p><a href="https://github.com/bnf/slim-typo3">https://github.com/bnf/slim-typo3</a></p>
+<h2 id="deprecation">Deprecation</h2>
+<pre><code>$pageRenderer-&gt;addCssFile(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($this-&gt;extKey) . 'Resources/Public/Css/Backend.css'
+);
+$pageRenderer-&gt;addCssFile(
+    GeneralUtility::getFileAbsFileName('EXT:teldas_company_mgmt/Resources/Public/Css/Backend.css')
+);
+</code></pre>
+
+<h2 id="iconregistry">IconRegistry</h2>
+<pre><code>/** @var \TYPO3\CMS\Core\Imaging\IconFactory $iconFactory */
+$iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+
+$content[] = $iconFactory-&gt;getIcon('extensions-' . $this-&gt;extKey . '-user', Icon::SIZE_SMALL)-&gt;render();
+</code></pre>
+
+<h2 id="typescript">TypeScript</h2>
+<p>The patch for issue #87324 was based on outdated tslint configuration, which
+causes all TypeScript builds to fail. The build is now fixed by executing</p>
+<pre><code>cd Build
+./node_modules/tslint/bin/tslint -c tslint.json --fix --project .
+</code></pre>
+
+<h2 id="functional-tests">Functional tests</h2>
+<p>Functional testing in TYPO3 world is basically the opposite of unit testing:
+Instead of looking at rather small, isolated pieces of code, functional testing
+looks at bigger scenarios with many involved dependencies. A typical scenario
+creates a full instance with some extensions, puts some rows into the database
+and calls an entry method, for instance a controller action.</p>
+<p>https://docs.typo3.org/typo3cms/CoreApiReference/Testing/WritingFunctional.html</p>
+<pre><code>Example:
+Build/Scripts/runTests.sh -s functional -p 7.3 -d postgres typo3/sysext/core/Tests/Functional/Package/
+</code></pre>
+
+<p>Based on the Nimut framework feature test. Source of inspiration:</p>
+<p><a href="https://github.com/cobwebch/external_import/blob/master/Tests/Functional/ImporterTest.php">https://github.com/cobwebch/external_import/blob/master/Tests/Functional/ImporterTest.php</a></p>
+<h2 id="acceptance-tests">Acceptance tests</h2>
+<p>https://docs.typo3.org/typo3cms/CoreApiReference/Testing/CoreTesting.html#introduction</p>
+<pre><code>Build/Scripts/runTests.sh -s acceptance typo3/sysext/core/Tests/Acceptance/Backend/Topbar/
+</code></pre>
+
+<p>https://docs.typo3.org/typo3cms/CoreApiReference/Testing/WritingAcceptance.html</p>
+<p>Acceptance testing in TYPO3 world is about piloting a browser to click through a
+frontend generated by TYPO3 or clicking through scenarios in the backend.</p>
+<h2 id="phpunit">PHPUnit</h2>
+<pre><code>./bin/phpunit -d memory_limit=1G -c vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml
+</code></pre>
+
+<h2 id="typo3-on-docker-for-mac">TYPO3 ON DOCKER FOR MAC</h2>
+<p>PERFORMANCE IMPROVEMENTS</p>
+<p><a href="https://typo3worx.eu/2019/01/performance-improvements-typo3-docker-macos/">https://typo3worx.eu/2019/01/performance-improvements-typo3-docker-macos/</a></p>
+<h2 id="typo3-version-chart">TYPO3 Version Chart</h2>
+<p><a href="http://typo3versions.felixnagel.com/">http://typo3versions.felixnagel.com/</a></p>
+<h2 id="rsync">Rsync</h2>
+<pre><code>rsync -av cuso:/sites/cuso.ch/htdocs/fileadmin htdocs/
+
+# Or with delete flag
+rsync -a --delete cuso:/sites/cuso.ch/htdocs/fileadmin htdocs/
+</code></pre>
+<h2 id="api">API</h2>
+<p><a href="https://forge.typo3.org/issues/82839">https://forge.typo3.org/issues/82839</a></p>
+<h2 id="set-debug">Set debug</h2>
+<pre><code>        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = 1;
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['debug'] = 1;
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = 1;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] =&gt; '1',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] =&gt; '*',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandler'] =&gt; 'TYPO3\\CMS\\Core\\Error\\ErrorHandler',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] =&gt; E_ALL ^ E_NOTICE,
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] =&gt; E_ALL ^ E_NOTICE ^ E_WARNING ^ E_USER_ERROR ^ E_USER_NOTICE ^ E_USER_WARNING,
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['debugExceptionHandler'] =&gt; 'TYPO3\\CMS\\Core\\Error\\DebugExceptionHandler',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['productionExceptionHandler'] =&gt; 'TYPO3\\CMS\\Core\\Error\\DebugExceptionHandler',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] =&gt; '0',
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] =&gt; true,
+</code></pre>
+<h2 id="copyright">Copyright</h2>
+<pre><code>/*
+ * This file is part of the Fab/. project.
+ */
+
+/*
+ * This file is part of the Fab/. project under GPLv2 or later.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.md file that was distributed with this source code.
+ */
+</code></pre>
+
+<h2 id="debug">Debug</h2>
+<pre><code>        if ($_SERVER['REMOTE_ADDR'] === '195.141.130.142') {
+
+        }
+
+        'SYS' =&gt; [
+            'devIPmask' =&gt; '127.0.0.1,::1,194.38.181.219,212.41.199.98,105.235.188.211',
+        ]
+</code></pre>
+<h2 id="ext_localconfphp">ext_localconf.php</h2>
+<pre><code>            &lt;?php
+            defined('TYPO3_MODE') || die('Access denied.');
+
+            call_user_func(
+                function () {
+
+                    // Setting up scripts that can be run from the cli_dispatch.phpsh script.
+                    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \Cobweb\GichdLitmos\Command\LitmosCommandController::class;
+                }
+            );
+</code></pre>
+
+<h2 id="create-a-new-extension">Create a new extension</h2>
+<p>Boilerplate code to write a new extension</p>
+<pre><code class="bash">@new-extension--
+
+    # ext_localconf.php:
+
+    defined('TYPO3_MODE') || die('Access denied.');
+
+    call_user_func(
+        function()
+        {
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin (
+                'Vendor.MyExtension',
+                'ExamplePlugin',
+                [
+                    'Document' =&gt; 'list, show'
+                ],
+                // non-cacheable actions
+                [
+                  'Document' =&gt; 'list'
+                ]
+            );
+
+        }
+    );
+
+    ext_tables.php
+    Configuration/TCA/Overrides/tt_content.php
+
+    defined('TYPO3_MODE') || die('Access denied.');
+
+    call_user_func(
+        function()
+        {
+
+            // Load TypoScript for this extension
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+                'my_extension',
+                'Configuration/TypoScript',
+                'GICHD Package : bla'
+            );
+
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin (
+                'Vendor.MyExtension',
+                'ExamplePlugin',
+                'My title',
+                'EXT:my_example/Resources/Public/Icons/Extension.svg'
+            );
+
+            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['myextension_exampleplugin'] = 'layout,recursive,select_key,pages';
+
+            $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['myextension_exampleplugin'] = 'pi_flexform,recursive';
+
+            TYPO3\CMS\Core\Utility\GeneralUtility::addPiFlexFormValue('myextension_exampleplugin', 'FILE:EXT:my_example/Configuration/FlexForms/flexform_list.xml');
+
+        }
+    );
+</code></pre>
+
+<p>In <code>Classes/Controller/MyController.php</code></p>
+<pre><code>&lt;?php
+namespace Ecodev\Speciality\Controller;
+
+/*
+ * This file is part of the Ecodev/Speciality project under GPLv2 or later.
+ */
+
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
+
+/**
+ * Class DocumentController
+ */
+class DocumentController extends ActionController {
+
+    /**
+     *
+     */
+    public function listAction()
+    {
+        return '123';
+    }
+}
+</code></pre>
+<p>In <code>Resources/Private/Templates/Document/List.html</code></p>
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"&gt;
+
+
+ciao bello!
+
+&lt;/html&gt;
+</code></pre>
+<p>In <code>configuration/TypoScript/constants.typoscript</code></p>
+<pre><code>plugin.tx_myexample {
+
+        settings {
+
+             # cat=plugin.tx_myexample/a; type=int+; label=Editor FE Usergroup uid:Enter the uid of the FE Usergroup that should be allowed to edit Blogs and Post in the frontend
+            editorUsergroupUid = 1
+        }
+
+        view {
+
+             # cat=plugin.tx_myexample/file; type=string; label=Path to template root (FE)
+            templateRootPath = EXT:my_example/Resources/Private/Templates/
+
+             # cat=plugin.tx_myexample/file; type=string; label=Path to template partials (FE)
+            partialRootPath = EXT:my_example/Resources/Private/Partials/
+
+             # cat=plugin.tx_myexample/file; type=string; label=Path to template layouts (FE)
+            layoutRootPath = EXT:my_example/Resources/Private/Layouts/
+        }
+
+        persistence {
+
+             # cat=plugin.tx_myexample//a; type=int+; label=Default storage PID
+            storagePid =
+        }
+}
+</code></pre>
+<p>In <code>Configuration/TypoScript/setup.typoscript</code></p>
+<pre><code>    # Plugin configuration
+
+    plugin.tx_myexample {
+
+        settings {
+
+             # maximum number of posts to display per page
+            postsPerPage = 3
+        }
+
+        persistence {
+            storagePid = {$plugin.tx_myexample.persistence.storagePid}
+        }
+
+        view {
+
+            templateRootPaths {
+                0 = {$plugin.tx_myexample.view.templateRootPath}
+            }
+
+            partialRootPaths {
+                0 = {$plugin.tx_myexample.view.partialRootPath}
+            }
+
+            layoutRootPaths {
+                0 = {$plugin.tx_myexample.view.layoutRootPath}
+            }
+
+            defaultPid = auto
+        }
+
+
+        # This is an example how to modify the translation
+
+        _LOCAL_LANG {
+            default {
+                someUnusedKey = foo
+
+            }
+        }
+    }
+</code></pre>
+
+<h2 id="oops-an-error-occurred">Oops, an error occurred!</h2>
+<pre><code>config.contentObjectExceptionHandler = 0
+</code></pre>
+
+<h2 id="get-configuration-from-extension-manager">Get configuration from extension manager</h2>
+<p>Old class was <code>\TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility</code>.</p>
+<pre><code class="bash">$configuration =
+GeneralUtility::makeInstance(ExtensionConfiguration::class)-&gt;get('vidi');
+</code></pre>
+
+<h2 id="mergeifnotblank-cms8-migration">mergeIfNotBlank CMS8 migration</h2>
+<pre><code>        Replace
+
+        'l10n_mode' =&gt; 'mergeIfNotBlank', //TODO: Drop after migration to TYPO3 v8
+
+        by
+
+
+        'config' =&gt; [
+            'behaviour' =&gt; [
+                'allowLanguageSynchronization' =&gt; true
+            ],
+        ],
+
+        More info: https://forge.typo3.org/issues/79658
+
+</code></pre>
+
+<h2 id="viewhelper-snippet">ViewHelper snippet</h2>
+<pre><code>    \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+
+    /**
+     * @return void
+     */
+    public function initializeArguments(): void
+    {
+        $this-&gt;registerArgument('newsItem', News::class, 'news item', true)
+             -&gt;registerArgument('settings', 'array', 'Settings', false, []);
+             -&gt;registerArgument('uriOnly', 'bool', 'url only', false, false);
+    }
+
+    /**
+     * Escapes special characters with their escaped counterparts as needed using PHPs strip_tags() function.
+     *
+     * @param string $value string to format
+     * @return mixed
+     */
+    public function render($value = null)
+    {
+        return static::renderStatic(
+            [
+                'value' =&gt; $value
+            ],
+            $this-&gt;buildRenderChildrenClosure(),
+            $this-&gt;renderingContext
+        );
+    }
+
+    /**
+     * Applies strip_tags() on the specified value.
+     *
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param \TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
+     * @return string
+     */
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    {
+        $value = $arguments['value'];
+        if ($value === null) {
+            $value = $renderChildrenClosure();
+        }
+        if (!is_string($value)) {
+            return $value;
+        }
+        return preg_replace('/&lt;p[^&gt;]*&gt;(.*)&lt;\/p[^&gt;]*&gt;/i', &quot;$1&quot;, trim($value));
+    }
+</code></pre>
+
+<h2 id="deprecated-contentobjectrenderer-text">Deprecated ContentObjectRenderer-&gt;TEXT()</h2>
+<pre><code>    $cObj-&gt;TEXT($config)
+    $cObj-&gt;cObjGetSingle('TEXT', $config)
+</code></pre>
+
+<h2 id="configuration-rte-ckeditor">Configuration RTE CKEDITOR</h2>
+<p><a href="https://www.thomaskieslich.de/blog/127-typo3-8x-ckeditor-konfigurieren/">https://www.thomaskieslich.de/blog/127-typo3-8x-ckeditor-konfigurieren/</a></p>
+<p><a href="https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin">https://www.slideshare.net/FransSaris/typo3-create-a-ckeditor-plugin</a></p>
+<p><a href="https://www.slideshare.net/FransSaris/htmlarea-to-ckeditor-creates-presets-and-your-own-plugin">https://www.slideshare.net/FransSaris/htmlarea-to-ckeditor-creates-presets-and-your-own-plugin</a></p>
+<h2 id="configuration-options">Configuration options</h2>
+<p><a href="https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ConfigurationOptions/Index.html">https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ConfigurationOptions/Index.html</a></p>
+<pre><code>$backendConfiguration = (bool)\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+   \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)
+   -&gt;get('your_extension_key', 'temporaryDirectory');
+</code></pre>
+<h2 id="loggin-in-typo3">Loggin in TYPO3</h2>
+<pre><code>    /** @var $logger \TYPO3\CMS\Core\Log\Logger */
+    $logger = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Log\LogManager::class)-&gt;getLogger(__CLASS__);
+    $logger-&gt;log(\TYPO3\CMS\Core\Log\LogLevel::DEBUG, 'From Fab', ['with data']);
+</code></pre>
+
+<h2 id="file-endings-for-typoscript-and-tsconfig-files-results">File Endings for TypoScript and TSconfig files - Results</h2>
+<ul>
+<li>Default File Endings for TypoScript files is ".typoscript"</li>
+<li>TypoScript / UserTSconfig / PageTSconfig should be distinguished throughout
+  the folder structure (not related to how it is named)</li>
+<li>Default File Endings for TSconfig files (User+Page) is ".tsconfig"</li>
+</ul>
+<p><a href="https://decisions.typo3.org/t/file-endings-for-typoscript-and-tsconfig-files-results/71">https://decisions.typo3.org/t/file-endings-for-typoscript-and-tsconfig-files-results/71</a></p>
+<h2 id="typo3-console-getting-things-done">TYPO3 Console: Getting things done</h2>
+<p><a href="https://typo3worx.eu/2017/05/typo3-console-getting-things-done/">https://typo3worx.eu/2017/05/typo3-console-getting-things-done/</a></p>
+<h1 id="keystrokes">Keystrokes</h1>
+<p><a href="https://notes.typo3.org/p/keystrokes">https://notes.typo3.org/p/keystrokes</a></p>
+<pre><code>    # Development
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = '30711';28674
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = '30711';
+
+    # Production
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = '20480';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = '20480';
+</code></pre>
+
+<p>@see
+https://docs.typo3.org/typo3cms/CoreApiReference/latest/ApiOverview/ErrorAndExceptionHandling/Configuration/Index.html</p>
+<h1 id="flashmessage-for-the-core">FlashMessage for the Core</h1>
+<p>Example:
+<a href="https://review.typo3.org/#/c/36675/4/typo3/sysext/scheduler/Classes/Task/FileStorageExtractionAdditionalFieldProvider.php">https://review.typo3.org/#/c/36675/4/typo3/sysext/scheduler/Classes/Task/FileStorageExtractionAdditionalFieldProvider.php</a></p>
+<h1 id="extension-manager-or-constant-editor">Extension Manager or Constant Editor</h1>
+<pre><code>#customsubcategory=subcatKey=LLL:EXT:sphinx/Resources/Private/Language/locallang_db.xlf:settings.build.auto_continue;
+
+cat=basic/subcatKey/10; type=boolean; label=LLL:EXT:sphinx/Resources/Private/Language/locallang_db.xlf:settings.sphinx.version
+version =
+
+#customcategory=basic=LLL:EXT:sphinx/Resources/Private/Language/locallang_db.xlf:settings.build.auto_continue
+</code></pre>
+
+<h1 id="cli">CLI</h1>
+<pre><code>./typo3/cli_dispatch.phpsh extbase extension:install code_assistant
+./typo3/cli_dispatch.phpsh extbase model:validate --configuration-file ../configuration/CodeAssistant.php
+</code></pre>
+
+<h1 id="tree-in-core">Tree in Core</h1>
+<pre><code>(CategoryTreeDataProvider) -&gt; (rootUid) DatabaseTreeDataProvider -&gt; AbstractTableConfigurationTreeDataProvider -&gt; AbstractTreeDataProvider
+
+TableConfigurationTree -&gt; Backend\\Tree\\AbstractTree
+
+TreeDataProviderFactory (rootUid)
+
+DatabaseTreeNode -&gt; Backend\\Tree\\TreeRepresentationNode
+</code></pre>
+
+<h2 id="get-ts-config-from-be-user">Get TS config from BE User</h2>
+<pre><code>// Hide main modules if set in userTS
+$hiddenMainModuleList = $GLOBALS['BE_USER']-&gt;getTSConfigVal('options.hiddenModules');
+$hiddenModules = $GLOBALS['BE_USER']-&gt;getTSConfig('options.hiddenModules');
+</code></pre>
+
+<h2 id="create-new-content-wizard">Create new content wizard</h2>
+<pre><code>mod {
+wizards.newContentElement.wizardItems.plugins {
+    \#header = LLL:EXT:sitepackage/Resources/Private/Language/newContentElements.xlf:extra
+    elements {
+        tx_vidifrontend_pi1 {
+            iconIdentifier = content-vidi-frontend
+            title = LLL:EXT:vidi_frontend/Resources/Private/Language/locallang.xlf:wizard.title
+            description = LLL:EXT:vidi_frontend/Resources/Private/Language/locallang.xlf:wizard.description
+            tt_content_defValues {
+                CType = list
+                list_type = vidifrontend_pi1
+            }
+        }
+    }
+}
+}
+</code></pre>
+
+<h2 id="icon-registry">Icon Registry</h2>
+<pre><code>/*
+ * Register Icons
+ */
+$icons = [
+    'content-sitepackage-gichd_carousel' =&gt; 'EXT:bootstrap_package/Resources/Public/Icons/ContentElements/carousel-item-html.svg',
+];
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+foreach ($icons as $identifier =&gt; $path) {
+    $iconRegistry-&gt;registerIcon(
+        $identifier, TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class, ['source' =&gt; $path]
+        #?
+        #$identifier, TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class, ['source' =&gt; $path]
+
+    );
+}
+</code></pre>
+
+<h1 id="blueprintsdistributionmanagement">Blueprints/DistributionManagement</h1>
+<p><a href="http://wiki.typo3.org/Blueprints/DistributionManagement">http://wiki.typo3.org/Blueprints/DistributionManagement</a></p>
+<p>Fluid:</p>
+<h1 id="example-de-recherche-pour-typo3-cms">Example de recherche pour TYPO3 CMS</h1>
+<p><a href="https://jelastic.com/cloud-hosting-in-switzerland/">https://jelastic.com/cloud-hosting-in-switzerland/</a></p>
+<h1 id="fal-file">FAL - File</h1>
+<p><a href="http://pastebin.com/zYPcWigM">http://pastebin.com/zYPcWigM</a> Try</p>
+<pre><code>{file.originalResource.identifier} or {file.originalResource.originalFile.identifier}
+
+instead of
+
+{file.originalFile.identifier}
+</code></pre>
+
+<h1 id="signal-slot">Signal / slot</h1>
+<pre><code>    /**
+     * Signal that is called after equipment creation.
+     *
+     * @param \TYPO3\CMS\Lima\Domain\Model\Equipment $equipment
+     * @signal
+     */
+    protected function emitAfterCreateEquipmentSignal(\TYPO3\CMS\Lima\Domain\Model\Equipment $equipment)
+    {
+        $this-&gt;getSignalSlotDispatcher()-&gt;dispatch('TYPO3\CMS\Lima\Controller\Backend\EquipmentController', 'afterCreateEquipment', array($equipment));
+    }
+
+    /**
+     * Get the SignalSlot dispatcher
+     *
+     * @return \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
+     */
+    protected function getSignalSlotDispatcher()
+    {
+        return $this-&gt;objectManager-&gt;get('TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher');
+    }
+</code></pre>
+
+<h1 id="object-manager">Object Manager</h1>
+<pre><code>    /**
+     * @return object|\TYPO3\CMS\Extbase\Object\ObjectManager
+     */
+    protected function getObjectManager()
+    {
+        return GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
+    }
+</code></pre>
+
+<h1 id="language-service">Language Service</h1>
+<pre><code>    /**
+     * @return \TYPO3\CMS\Lang\LanguageService
+     */
+    protected function getLanguageService()
+    {
+        return $GLOBALS['LANG'];
+    }
+</code></pre>
+
+<h1 id="content-object">Content Object</h1>
+<pre><code>    /**
+     * @return ContentObjectRenderer
+     */
+    protected function getContentObject()
+    {
+        return GeneralUtility::makeInstance(ContentObjectRenderer::class);
+    }
+</code></pre>
+
+<h1 id="button">Button</h1>
+<p>cf. ButtonBar.html pour ToolBar</p>
+<pre><code>    $this-&gt;makeLinkButton()
+    -&gt;setHref($this-&gt;getNewUri())
+    -&gt;setTitle($this-&gt;getLanguageService()-&gt;sL('LLL:EXT:lang/locallang_mod_web_list.xlf:newRecordGeneral'))
+    -&gt;setIcon($this-&gt;getIconFactory()-&gt;getIcon('actions-document-new', Icon::SIZE_SMALL))
+    -&gt;render();
+
+/**
+*   Render a create URI given a data type.
+*
+*   @return string
+     \*/
+    protected function getNewUri()
+    {
+        $uri = BackendUtility::getModuleUrl(
+            'record_edit',
+            array(
+                $this-&gt;getNewParameterName() =&gt; 'new',
+                'returnUrl' =&gt; $this-&gt;getModuleLoader()-&gt;getModuleUrl()
+            )
+        );
+        return $uri;
+    }
+
+/**
+*   @return \\TYPO3\\CMS\\Lang\\LanguageService
+*   @throws \\InvalidArgumentException
+     \*/
+    protected function getLanguageService()
+    {
+        return GeneralUtility::makeInstance(\\TYPO3\\CMS\\Lang\\LanguageService::class);
+    }
+
+/**
+*   @return LinkButton
+*   @throws \\InvalidArgumentException
+     \*/
+    protected function makeLinkButton()
+    {
+        return GeneralUtility::makeInstance(LinkButton::class);
+    }
+
+/**
+
+*   @return IconFactory
+*   @throws \\InvalidArgumentException
+     \*/
+    protected function getIconFactory()
+    {
+        return GeneralUtility::makeInstance(IconFactory::class);
+    }
+
+</code></pre>
+
+<h1 id="database-connection">Database connection</h1>
+<h2 id="with-doctrine">With Doctrine</h2>
+<pre><code>    /** @var Connection $connection */
+    $connection = GeneralUtility::makeInstance(ConnectionPool::class)-&gt;getConnectionForTable('pages');
+    $pages = $connection-&gt;select(['*'], 'pages', ['pid' =&gt; 1605])-&gt;fetchAll();
+
+    Example: https://git.higidi.com/TYPO3/TYPO3.CMS/commit/65e830b42135d7d6a075dc6935347b4eecb463a5
+</code></pre>
+
+<p>Other examples</p>
+<pre><code>
+        /*************************************************************/
+
+        /** @var \TYPO3\CMS\Core\Database\Query\QueryBuilder $query */
+        $query = GeneralUtility::makeInstance(ConnectionPool::class)
+            -&gt;getQueryBuilderForTable('tx_teldascompanymgmt_domain_model_company');
+
+        $query-&gt;getRestrictions()-&gt;removeAll();
+
+        $company = $query-&gt;select('*')
+            -&gt;from('tx_teldascompanymgmt_domain_model_company')
+            -&gt;where(
+                $query-&gt;expr()-&gt;eq('pid', (int)$page['uid'])
+            )
+            -&gt;execute()
+            -&gt;fetch();
+
+
+
+        /*************************************************************/
+
+        /**
+         * @param int $uid
+         * @return array
+         */
+        public function findByUid(int $uid): array
+        {
+            $query = $this-&gt;getQueryBuilder();
+            $query-&gt;select('*')
+                -&gt;from($this-&gt;tableName)
+                -&gt;where(
+                    $this-&gt;getQueryBuilder()-&gt;expr()-&gt;eq(
+                        'uid',
+                        $uid
+                    )
+                );
+
+            $records = $query-&gt;execute()-&gt;fetch();
+
+            return is_array($records) ? $records : [];
+        }
+
+
+        /*************************************************************/
+
+        /**
+         * @param array $demand
+         * @return array
+         */
+        public function findByDemand(array $demand = []): array
+        {
+            /** @var QueryBuilder $query */
+            $query = $this-&gt;getQueryBuilder();
+            $query-&gt;select('*')
+                -&gt;from($this-&gt;tableName)
+                -&gt;addOrderBy('uid', 'DESC')
+                -&gt;setMaxResults(20);
+
+            $expressions = [];
+            foreach ($demand as $fieldName =&gt; $value) {
+                if (is_int($value)) {
+                    $expressions[] = $query-&gt;expr()-&gt;eq($fieldName, $value);
+                } elseif (is_string($value)) {
+                    $expressions[] = $query-&gt;expr()-&gt;eq(
+                        $fieldName,
+                        $query-&gt;expr()-&gt;literal($value)
+                    );
+                } elseif (is_array($value)) {
+                    $expressions[] = $query-&gt;expr()-&gt;in(
+                        $fieldName,
+                        $value
+                    );
+                }
+            }
+            foreach ($expressions as $expression) {
+                $query-&gt;andWhere($expression);
+            }
+
+            return $query
+                -&gt;execute()
+                -&gt;fetchAll();
+        }
+
+
+        /*************************************************************/
+
+        $orStatement = $query-&gt;exp()-&gt;orX();
+        foreach ($values as $value) {
+            $orStatement-&gt;add(
+                $query-&gt;expr()-&gt;eq(
+                    'fieldName',
+                    $query-&gt;expr()-&gt;literal($value)
+                )
+            );
+        }
+        $constraints[] = $orStatement;
+
+
+        /*************************************************************/
+
+        /**
+        * @param string $fieldName
+        * @param $value
+        * @return string
+        */
+        public function getConstraints(string $fieldName, $value): string
+        {
+
+            $query = $this-&gt;getQueryBuilder($this-&gt;tableName);
+
+            if (is_int($value)) {
+                $expression = $query-&gt;expr()-&gt;eq($fieldName, $value);
+            } elseif (is_array($value)) {
+                $expression = $query-&gt;expr()-&gt;in(
+                    $fieldName,
+                    $value
+                );
+            } else {
+                $expression = $query-&gt;expr()-&gt;eq(
+                    $fieldName,
+                    $query-&gt;expr()-&gt;literal($value)
+                );
+            }
+
+            return $expression;
+        }
+
+        /*************************************************************/
+
+        /**
+         * @param int $pageIdentifier
+         * @return array
+         */
+        public function getPages(int $pageIdentifier): array {
+            /** @var QueryBuilder $query */
+            $query = $this-&gt;getQueryBuilder('pages');
+            $query-&gt;select('*')
+                -&gt;from('pages')
+                  -&gt;andWhere(
+                    'pid = ' . $pageIdentifier,
+                    'doktype IN (1,4)',
+                    'fe_group = &quot;&quot;'
+            )
+            -&gt;where(
+                    $queryBuilder-&gt;expr()-&gt;eq('foo', 0),
+                    $queryBuilder-&gt;expr()-&gt;eq('bar', 0)
+                )
+
+            -&gt;addOrderBy('sorting', 'ASC');
+
+            // Enable fields are handled manually...
+            #$query-&gt;getRestrictions()-&gt;removeAll();
+
+
+            return $query
+                -&gt;execute()
+                -&gt;fetchAll();
+        }
+
+
+        /*************************************************************/
+
+        /**
+         * @param int $category
+         * @return array
+         */
+        public function findByCategory(int $category): array
+        {
+            /** @var QueryBuilder $query */
+            $query = $this-&gt;getQueryBuilder('sys_file');
+            $query-&gt;select('*')
+                -&gt;from('sys_file')
+                -&gt;innerJoin(
+                    'sys_file',
+                    'sys_file_metadata',
+                    'sys_file_metadata',
+                    'sys_file.uid = sys_file_metadata.file'
+                )
+                -&gt;innerJoin(
+                    'sys_file_metadata',
+                    'sys_category_record_mm',
+                    'sys_category_record_mm',
+                    'sys_category_record_mm.uid_foreign = sys_file_metadata.uid AND tablenames = &quot;sys_file_metadata&quot; AND fieldname = &quot;categories&quot;'
+                )
+                -&gt;where(
+                    $queryBuilder-&gt;expr()-&gt;eq('sys_category_record_mm.uid_local', $category)
+                );
+
+            return $query
+                -&gt;execute()
+                -&gt;fetchAll();
+        }
+
+        /*************************************************************/
+
+        /**
+         * @param string $tableName
+         * @return object|QueryBuilder
+         */
+        protected function getQueryBuilder($tableName): QueryBuilder
+        {
+            /** @var ConnectionPool $connectionPool */
+            $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+            return $connectionPool-&gt;getQueryBuilderForTable($tableName);
+        }
+
+        /*************************************************************/
+
+        /**
+        * @param string $tableName
+        * @return object|Connection
+        */
+        protected function getConnection($tableName): Connection
+        {
+            /** @var ConnectionPool $connectionPool */
+            $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+            return $connectionPool-&gt;getConnectionForTable($tableName);
+        }
+
+        /*************************************************************/
+
+        $connection = $this-&gt;getConnection($tableName)
+        $connection-&gt;insert(
+            $tableName,
+            [
+                'pid' =&gt; 1,
+            ]
+        );
+        $pageUid = (int)$connection-&gt;lastInsertId();
+
+
+        /*************************************************************/
+
+        /**
+         * Returns a pointer to the database.
+         * DEPRECATED
+         *
+         * @return \TYPO3\CMS\Core\Database\DatabaseConnection
+         */
+        protected function getDatabaseConnection()
+        {
+            return $GLOBALS['TYPO3_DB'];
+        }
+
+</code></pre>
+
+<h1 id="content-object_1">Content Object</h1>
+<pre><code>&lt;?php
+
+namespace Ecodev\Speciality\Domain\Repository;
+
+/*
+ * This file is part of the Ecodev/Speciality. project.
+ */
+
+use Fab\Vidi\Domain\Model\Content;
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+
+/**
+ * Class AbstractContentRepository
+ */
+abstract class AbstractContentRepository implements SingletonInterface
+{
+
+    /**
+     * @var string
+     */
+    protected $dataType = '';
+
+    /**
+     * @param array $records
+     * @return object|Content|null
+     */
+    protected function convertFirstToContentObject(array $records): ?Content
+    {
+        return empty($records)
+            ? null
+            : GeneralUtility::makeInstance(Content::class, $this-&gt;dataType, $records[0]);
+    }
+
+    /**
+     * @param array $records
+     * @return array
+     */
+    protected function convertToContentObjects(array $records): array
+    {
+        $contentObjects = [];
+        foreach ($records as $record) {
+            $contentObjects[] = GeneralUtility::makeInstance(Content::class, $this-&gt;dataType, $record);
+        }
+        return $contentObjects;
+    }
+
+
+    /**
+     * @param string $tableName
+     * @return object|QueryBuilder
+     */
+    protected function getQueryBuilder($tableName): QueryBuilder
+    {
+        /** @var ConnectionPool $connectionPool */
+        $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+        return $connectionPool-&gt;getQueryBuilderForTable($tableName);
+    }
+
+
+}
+
+</code></pre>
+
+<h1 id="enable-fields">Enable fields</h1>
+<pre><code>        /**
+         * get the WHERE clause for the enabled fields of this TCA table
+         * depending on the context
+         *
+         * @return string the additional where clause, something like &quot; AND deleted=0 AND hidden=0&quot;
+         * @throws \InvalidArgumentException
+         */
+        protected function getWhereClauseForEnabledFields()
+        {
+            if ($this-&gt;isFrontendMode()) {
+                // frontend context
+                $whereClause = $this-&gt;getPageRepository()-&gt;enableFields($this-&gt;tableName);
+                $whereClause .= $this-&gt;getPageRepository()-&gt;deleteClause($this-&gt;tableName);
+            } else {
+                // backend context
+                $whereClause = \TYPO3\CMS\Backend\Utility\BackendUtility::BEenableFields($this-&gt;tableName);
+                $whereClause .= \TYPO3\CMS\Backend\Utility\BackendUtility::deleteClause($this-&gt;tableName);
+            }
+            return $whereClause;
+        }
+</code></pre>
+
+<h1 id="typo3-mode">TYPO3 Mode</h1>
+<pre><code>        /**
+         * Returns whether the current mode is Frontend
+         *
+         * @return bool
+         */
+        protected function isFrontendMode()
+        {
+            return TYPO3_MODE === 'FE';
+        }
+
+        /**
+         * Returns whether the current mode is Backend
+         *
+         * @return bool
+         */
+        protected function isBackendMode()
+        {
+            return TYPO3_MODE === 'BE';
+        }
+</code></pre>
+
+<h1 id="get-time-stamp">Get Time stamp</h1>
+<pre><code>        /**
+         * Return current time stamp.
+         *
+         * @return int
+         */
+        protected function getTimeStamp()
+        {
+            return $GLOBALS['_SERVER']['REQUEST_TIME'];
+        }
+</code></pre>
+
+<h1 id="frontend-user">Frontend User</h1>
+<pre><code>        /**
+         * Returns an instance of the current Frontend User.
+         *
+         * @return \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
+         */
+        protected function getFrontendUser()
+        {
+            return $GLOBALS['TSFE']-&gt;fe_user;
+        }
+
+        /**
+         * Returns user data of the current Frontend User.
+         *
+         * @return array
+         */
+        protected function getFrontendUserData()
+        {
+            return $GLOBALS['TSFE']-&gt;fe_user-&gt;user ? $GLOBALS['TSFE']-&gt;fe_user-&gt;user : [];
+        }
+</code></pre>
+
+<h1 id="frontend-object">Frontend Object</h1>
+<pre><code>        /**
+         * Returns an instance of the Frontend object.
+         *
+         * @return \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
+         */
+        protected function getTypoScriptFrontendController(): TypoScriptFrontendController
+        {
+            return $GLOBALS['TSFE'];
+        }
+</code></pre>
+
+<h1 id="page-repository">Page Repository</h1>
+<pre><code>        /**
+         * Returns an instance of the page repository.
+         *
+         * @return \TYPO3\CMS\Frontend\Page\PageRepository
+         */
+        protected function getPageRepository(): PageRepository
+        {
+            return $GLOBALS['TSFE']-&gt;sys_page;
+        }
+</code></pre>
+
+<h1 id="backend-user">Backend User</h1>
+<pre><code>        /**
+         * Returns an instance of the current Backend User.
+         *
+         * @return \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
+         */
+        protected function getBackendUser()
+        {
+            return $GLOBALS['BE_USER'];
+        }
+</code></pre>
+
+<h1 id="logging">Logging</h1>
+<pre><code>        /**
+         * @return \TYPO3\CMS\Core\Log\Logger
+         * @throws \InvalidArgumentException
+         */
+        protected function getLogger()
+        {
+
+            /** @var $loggerManager \TYPO3\CMS\Core\Log\LogManager */
+            $loggerManager = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Log\LogManager::class);
+
+            /** @var $logger \TYPO3\CMS\Core\Log\Logger */
+            return $loggerManager-&gt;getLogger(get_class($this));
+        }
+</code></pre>
+
+<h1 id="typolink">TypoLink</h1>
+<pre><code>        /** @var ContentObjectRenderer $contentObject */
+        $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+        $url = $contentObject-&gt;typoLink_URL(['parameter' =&gt; 161]);
+</code></pre>
+
+<h2 id="image-resources">Image Resources</h2>
+<pre><code>        /** @var ContentObjectRenderer $contentObject */
+        $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+        $element = $contentObject-&gt;cObjGetSingle('IMG_RESOURCE', $conf);
+</code></pre>
+
+<h1 id="flash-messages">Flash messages</h1>
+<pre><code>            /** @var FlashMessage $flashMessage */
+            $flashMessage = GeneralUtility::makeInstance(
+                'TYPO3\CMS\Core\Messaging\FlashMessage',
+                \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+                    'message.not_equipment_owner',
+                    'lima'
+                ),
+                '',
+                FlashMessage::ERROR,
+                TRUE
+            );
+            $this-&gt;getControllerContext()-&gt;c()-&gt;enqueue($flashMessage);
+
+
+        &lt;f:flashMessages renderMode=&quot;div&quot; class=&quot;alert alert-success&quot;/&gt;
+
+</code></pre>
+
+<p>Normally, must not be class="alert alert-success" but rather compile Bootstrap
+to recognize "typo3-message message-ok" as "alert alert-success""</p>
+<h1 id="access-typoscript-frontend">Access TypoScript Frontend</h1>
+<p>Snippet 1</p>
+<pre><code>        if (isset($GLOBALS['TSFE'])) {
+            $this-&gt;settings = $GLOBALS['TSFE']-&gt;tmpl-&gt;setup['plugin.']['tx_messenger.']['settings.'];
+        }
+</code></pre>
+
+<h1 id="unserialize-configuration">Unserialize configuration</h1>
+<pre><code>$this-&gt;configuration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this-&gt;extKey]);
+</code></pre>
+<h1 id="patch">PATCH</h1>
+<pre><code>&lt;http://wiki.typo3.org/CommitMessage_Format_%28Git%29&gt;
+</code></pre>
+<pre><code>    74 words limit
+    --------------
+
+    git push origin HEAD:refs/for/master/&amp;lt;forge#&gt;
+
+    [TASK] Add Domain Model and Repository to Category
+
+    Description
+
+    Resolves: #38719
+    Fixes: #38719 (also possible ?)
+    Releases: 6.0, 6.1
+
+    [BUGFIX] Add categorization into the Core
+
+    Description
+
+    Fixes: #38711
+    Releases: 6.0, 6.1
+</code></pre>
+
+<h1 id="path-documentation">PATH DOCUMENTATION</h1>
+<pre><code>    [FEATURE] Add javascriptLibs.jQuery to &quot;PAGE&quot;
+
+    Added possible Typoscript settings for jQuery include.
+
+    Resolves: #38682
+    Depends: I7fc130bc5fc7ce5e27b8b58998af3406b26ce45d
+</code></pre>
+
+<div style="display: none">
+Forge
+-----
+
+<http://forge.typo3.org/users/1741/edit> (fab1en) fabien.udriot@ecodev.ch
+<http://forge.typo3.org/users/1670/edit> (fabien_u) fabien@udriot.net
+<http://forge.typo3.org/users/210/edit> (omic) fudriot@omic.ch  
+<http://forge.typo3.org/users/4594/edit> (fudriot) fabien@ecodev.ch
+
+</div>
+
+<h1 id="hook-declaration">HOOK DECLARATION</h1>
+<pre><code>
+            // Call hook functions for additional constraints
+            if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['Domain/Repository/AbstractDemandedRepository.php']['findDemanded'])) {
+                $params = array(
+                    'demand' =&gt; $demand,
+                    'respectEnableFields' =&gt; &amp;$respectEnableFields,
+                    'query' =&gt; $query,
+                    'constraints' =&gt; &amp;$constraints,
+                );
+                foreach ($GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['Domain/Repository/AbstractDemandedRepository.php']['findDemanded'] as $reference) {
+                    GeneralUtility::callUserFunction($reference, $params, $this);
+                }
+            }
+</code></pre>
+
+<h1 id="hook">Hook</h1>
+<p>Plusieurs façon d'utiliser un HOOK</p>
+<ol>
+<li>&amp; -&gt; utilisation comme un service (singleton)</li>
+</ol>
+<p>// Must use '&amp;" with tcemain hook!!! Important for proper work of the hook.
+\$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['tx_realurl']
+= 'EXT:realurl/class.tx_realurl_tcemain.php:&amp;tx_realurl_tcemain';</p>
+<pre><code>2.
+</code></pre>
+<pre><code>require_once(t3lib_extMgm::extPath('worldtempus').'class.tx_templatedisplay_hook.php');
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['dataquery']['postProcessDataStructure'][] = 'tx_templatedisplay_hook';
+</code></pre>
+
+<h1 id="chash">CHASH</h1>
+<pre><code>comprendre les cHash
+
+&lt;http://typo3.org/development/articles/the-mysteries-of-chash/&gt;
+&lt;http://developpeur-typo3.spaces.live.com/Blog/cns!1B1E3A9303C7C618!260.entry&gt;
+</code></pre>
+<h2 id="article-seo-astuces-canonical">ARTICLE SEO ASTUCES - CANONICAL</h2>
+<pre><code>lib.canonical = TEXT
+lib.canonical {
+     typolink {
+          parameter = # value defined in condition
+          useCacheHash = 1
+
+          # add all get parameters from the current URL
+          addQueryString = 1
+          addQueryString.method = GET
+
+          # remove the page id from the parameters so it is not inserted twice
+          addQueryString.exclude = id
+          returnLast = url
+     }
+     wrap = &lt;link rel=&quot;canonical&quot; href=&quot;https://www.domain.tld/|&quot; /&gt;
+
+}
+
+[globalVar = GP:tx_displaycontroller|equipment &gt; 0]
+     page.headerData.930 &amp;lt; lib.canonical
+     page.headerData.930.typolink.parameter = 3614
+[global]
+
+[globalVar = GP:tx_ttnews|tt_news &gt; 0]
+     page.headerData.930 &amp;lt; lib.canonical
+     page.headerData.930.typolink.parameter = xxx
+[global]
+</code></pre>
+
+<h2 id="caching">caching</h2>
+<p>Nettoyer le cache (tt_news)</p>
+<pre><code>    TCEMAIN.clearCacheCmd = all
+    TCEMAIN.clearCacheCmd = 45,53,60  (préféré cette ligne, car valable pr les non admin)
+</code></pre>
+
+<pre><code>&lt;http://buzz.typo3.org/people/ron-hall/article/dont-wear-out-the-clear-cache-button/&gt;
+
+* This value is overridden by the value set in the page-record (field="cache_timeout") if this value is greater than zero.
+</code></pre>
+<pre><code>config.cache_period = (int, seconds) (default: 86400 =24H)
+config.cache_clearAtMidnight = 1
+
+</code></pre>
+
+<h2 id="typical-composerjson">Typical composer.json</h2>
+<p>https://github.com/TYPO3/minimal</p>
+<pre><code>composer require typo3/minimal
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../t3-introduction.learn/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

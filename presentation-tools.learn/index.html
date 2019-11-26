@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://fab.omic.ch/machine-learning.learn/">
+        <link rel="canonical" href="https://fab.omic.ch/presentation-tools.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Machine-learning</title>
+        <title>Presentation Tools Web Slides - Lesson learnt!</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#machine-learning-university-daws-est-disponible-gratuitement" tabindex="1" class="md-skip">
+      <a href="#presentation-tools-web-slides" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Machine-learning
+                Presentation Tools Web Slides
               
             </span>
           
@@ -336,6 +336,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
+      Machine-learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -346,22 +358,53 @@
       
     
     
-    <a href="./" title="Machine-learning" class="md-nav__link md-nav__link--active">
-      Machine-learning
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Presentation Tools Web Slides
+      </label>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../presentation-tools.learn/" title="Presentation Tools Web Slides" class="md-nav__link">
+    <a href="./" title="Presentation Tools Web Slides" class="md-nav__link md-nav__link--active">
       Presentation Tools Web Slides
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-presentation-tools" class="md-nav__link">
+    What are the presentation tools ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marp" class="md-nav__link">
+    Marp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    mkdocs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -442,6 +485,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-presentation-tools" class="md-nav__link">
+    What are the presentation tools ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marp" class="md-nav__link">
+    Marp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    mkdocs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -452,15 +525,77 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/machine-learning.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/presentation-tools.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="machine-learning-university-daws-est-disponible-gratuitement">Machine Learning University d’AWS est disponible gratuitement</h2>
-<p><a href="https://www.silicon.fr/machine-learning-university-daws-est-disponible-gratuitement-226459.html">https://www.silicon.fr/machine-learning-university-daws-est-disponible-gratuitement-226459.html</a></p>
-<h1 id="nlp">NLP</h1>
-<p>Natural Language Processing
-<a href="https://www.freecodecamp.org/news/beaucarnes/natural-language-processing-tutorial-with-python-nltk--9z5vFDwr4">https://www.freecodecamp.org/news/beaucarnes/natural-language-processing-tutorial-with-python-nltk--9z5vFDwr4</a></p>
-<p>Computer Science + Artificial Intelligence + Human Language</p>
+                <h1 id="presentation-tools-web-slides">Presentation Tools Web Slides</h1>
+<h2 id="what-are-the-presentation-tools">What are the presentation tools ?</h2>
+<p>I like to write my presentation / slides in Markdown and transform them afterward in web slides / PDF. Although it does not produce the most beautiful presentation with sparkling effects and so on, It allows to just concentrate on the content. For quite some time I was using <a href="https://nosir.github.io/cleave.js/">cleaver</a> which is a nice and straightforward tool. The downside is that it can not generate PDF which is required in the academic world as "proove of work". That's because I recently move to <a href="https://marp.app">Marp</a> that looks quite ambitious: Markdown Presentation Ecosystem. I am still experimenting a bit with this tool but it looks quite complete. </p>
+<h2 id="marp">Marp</h2>
+<p>The integration with VS code is <strong>bluffing</strong>! </p>
+<pre><code class="markdown">---
+marp: true
+---
+
+# Your slide deck
+
+Start writing!
+</code></pre>
+
+<p>As said above, very nice tool. It can me installed globally</p>
+<pre><code class="bash">npm install -g @marp-team/marp-cli
+</code></pre>
+
+<p>Or locally via <code>npx</code>. From the documentation:</p>
+<pre><code class="bash"># Convert slide deck into HTML 
+npx @marp-team/marp-cli slide-deck.md
+npx @marp-team/marp-cli slide-deck.md -o output.html
+
+# Convert slide deck into PDF 
+npx @marp-team/marp-cli slide-deck.md --pdf
+npx @marp-team/marp-cli slide-deck.md -o output.pdf
+
+# Convert slide deck into PowerPoint document (PPTX) 
+npx @marp-team/marp-cli slide-deck.md --pptx
+npx @marp-team/marp-cli slide-deck.md -o output.pptx
+
+# Watch mode 
+npx @marp-team/marp-cli -w slide-deck.md
+
+# Server mode (Pass directory to serve) 
+npx @marp-team/marp-cli -s ./slides
+
+# Open converted HTML in preview window 
+npx @marp-team/marp-cli -p slide-deck.md
+</code></pre>
+
+<ul>
+<li>Marp: Markdown Presentation Ecosystem
+  https://github.com/marp-team/marp-cli</li>
+</ul>
+<h2 id="mkdocs">mkdocs</h2>
+<p>Another option, I am keeping on the radard is <a href="https://www.mkdocs.org/">https://www.mkdocs.org</a> with the <a href="https://squidfunk.github.io/mkdocs-material/">material design theme</a>. The theme is fully responsive and displays a table of content on the right. This is a python tools which must be installed via pip. On my system (Ubuntu 18.04 as of writing) I had to run</p>
+<pre><code class="bash"># I guess with Ubuntu 20.04 it can be python-pip since python 3 will be the default
+sudo apt python3-pip 
+
+# Install mkdocs via pip which is more up-to-date.
+pip install mkdocs
+
+# Install material design theme
+pip install mkdocs-material
+</code></pre>
+
+<p>Bootstrap a new project</p>
+<pre><code class="bash">mkdocs new my-mkdocs
+mkdocs serve
+
+# Check the command usage
+Commands:
+  build      Build the MkDocs documentation
+  gh-deploy  Deploy your documentation to GitHub Pages
+  new        Create a new MkDocs project
+  serve      Run the builtin development server
+</code></pre>
                 
                   
                 
@@ -481,7 +616,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../kubernetes.learn/" title="Kubernetes - MicroK8s" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../machine-learning.learn/" title="Machine-learning" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -490,19 +625,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Kubernetes - MicroK8s
+                Machine-learning
               </span>
             </div>
           </a>
         
         
-          <a href="../presentation-tools.learn/" title="Presentation Tools Web Slides" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../python.learn/" title="Python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Presentation Tools Web Slides
+                Python
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

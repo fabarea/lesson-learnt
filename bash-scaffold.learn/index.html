@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://fab.omic.ch/machine-learning.learn/">
+        <link rel="canonical" href="https://fab.omic.ch/bash-scaffold.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Machine-learning</title>
+        <title>Bash - script scaffold</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#machine-learning-university-daws-est-disponible-gratuitement" tabindex="1" class="md-skip">
+      <a href="#how-would-you-scaffold-your-bash-script" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Machine-learning
+                Bash - script scaffold
               
             </span>
           
@@ -228,11 +228,45 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../bash-scaffold.learn/" title="Bash - script scaffold" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bash - script scaffold
+      </label>
+    
+    <a href="./" title="Bash - script scaffold" class="md-nav__link md-nav__link--active">
       Bash - script scaffold
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-would-you-scaffold-your-bash-script" class="md-nav__link">
+    How would you scaffold your bash script?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -336,20 +370,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Machine-learning" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
       Machine-learning
     </a>
-    
   </li>
 
     
@@ -439,8 +464,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-would-you-scaffold-your-bash-script" class="md-nav__link">
+    How would you scaffold your bash script?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -452,15 +491,115 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/machine-learning.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/bash-scaffold.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="machine-learning-university-daws-est-disponible-gratuitement">Machine Learning University d’AWS est disponible gratuitement</h2>
-<p><a href="https://www.silicon.fr/machine-learning-university-daws-est-disponible-gratuitement-226459.html">https://www.silicon.fr/machine-learning-university-daws-est-disponible-gratuitement-226459.html</a></p>
-<h1 id="nlp">NLP</h1>
-<p>Natural Language Processing
-<a href="https://www.freecodecamp.org/news/beaucarnes/natural-language-processing-tutorial-with-python-nltk--9z5vFDwr4">https://www.freecodecamp.org/news/beaucarnes/natural-language-processing-tutorial-with-python-nltk--9z5vFDwr4</a></p>
-<p>Computer Science + Artificial Intelligence + Human Language</p>
+                  <h1>Bash - script scaffold</h1>
+                
+                <h2 id="how-would-you-scaffold-your-bash-script">How would you scaffold your bash script?</h2>
+<p>I found inspiring the way the <code>rustup</code> script is architectured... To be personalized of course.</p>
+<p>Source:</p>
+<pre><code class="bash">curl https://static.rust-lang.org/rustup.sh | less
+</code></pre>
+
+<p>Extract of the script:</p>
+<pre><code class="bash">
+#!/bin/bash
+set -u # Undefined variables are errors
+
+main() {
+assert_cmds
+set_globals
+handle_command_line_args &quot;$@&quot;
+}
+
+# Help
+
+print_help() {
+echo '
+Usage: rustup.sh [--verbose]
+
+Options:
+
+--channel=(stable|beta|nightly)   Install from channel (default stable)
+--date=&lt;YYYY-MM-DD&gt;               Install from archives
+--revision=&lt;version-number&gt;       Install a specific release
+--spec=&lt;toolchain-spec&gt;           Install from toolchain spec
+--prefix=&lt;path&gt;                   Install to a specific location (default /usr/local)
+--uninstall                       Uninstall instead of install
+--disable-ldconfig                Do not run ldconfig on Linux
+--disable-sudo                    Do not run installer under sudo
+--save                            Save downloads for future reuse
+--yes, -y                         Disable the interactive mode
+'
+}
+
+# Standard utilities
+
+arguments: BRANCH, DIR (optional)
+=================================
+
+say() {
+    echo &quot;rustup: $1&quot;
+}
+
+say_err() {
+    say &quot;$1&quot; &gt;&amp;2
+}
+
+verbose_say() {
+    if [ &quot;$flag_verbose&quot; = true ]; then
+    say &quot;$1&quot;
+    fi
+}
+
+err() {
+    say &quot;$1&quot; &gt;&amp;2
+    exit 1
+}
+
+need_cmd() {
+    if ! command -v &quot;$1&quot; &gt; /dev/null 2&gt;&amp;1
+    then err &quot;need $1&quot;
+    fi
+}
+
+need_ok() {
+    if [ $? != 0 ]; then err &quot;$1&quot;; fi
+}
+
+assert_nz() {
+    if [ -z &quot;$1&quot; ]; then err &quot;assert_nz $2&quot;; fi
+}
+
+# Run a command that should never fail. If the command fails execution
+# will immediately terminate with an error showing the failing
+# command.
+ensure() {
+&quot;$@&quot;
+    need_ok &quot;command failed: $*&quot;
+}
+
+# This is just for indicating that commands' results are being
+# intentionally ignored. Usually, because it's being executed
+# as part of error handling.
+ignore() {
+    run &quot;$@&quot;
+}
+
+# Runs a command and prints it to stderr if it fails.
+run() {
+    &quot;$@&quot;
+    local _retval=$?
+    if [ $_retval != 0 ]; then
+        say_err &quot;command failed: $*&quot;
+    fi
+    return $_retval
+}
+
+main &quot;$@&quot;
+
+</code></pre>
                 
                   
                 
@@ -481,7 +620,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../kubernetes.learn/" title="Kubernetes - MicroK8s" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -490,19 +629,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Kubernetes - MicroK8s
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../presentation-tools.learn/" title="Presentation Tools Web Slides" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../bash.learn/" title="Bash - my stubborn donkey" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Presentation Tools Web Slides
+                Bash - my stubborn donkey
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
