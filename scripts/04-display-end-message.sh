@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source config.sh
+source scripts/config.sh
 
 print "Wait a bit and open https://fab.omic.ch"

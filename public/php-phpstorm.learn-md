@@ -1,0 +1,105 @@
+---
+date: 2019-03-21T10:39:16.000Z
+title: Phpstorm
+---
+
+Unit Tests avec PHPStorm
+------------------------
+
+<https://cobwebch.atlassian.net/wiki/spaces/CWTYPO3/pages/737509377/Tests+unitaires+et+fonctionnels>
+
+Unit Test avec TYPO3!
+---------------------
+
+<https://www.youtube.com/watch?v=9zoHWNR5OcQ>
+
+@phpunit--
+
+Xdebug with PHPStorm
+--------------------
+
+<https://www.youtube.com/watch?v=VtffB0CG1ok>
+
+@xdebug--
+
+My Favourite PhpStorm Secrets
+=============================
+
+<https://nomadphp.com/favourite-phpstorm-secrets/>
+
+
+Find code occurrences to change
+===============================
+
+You can also easily change any repeating code fragment with Select All Occurrences (⌃⌘G/Ctrl+Shift+Alt+J) and Select/Unselect Next Occurrence (⌃G and ⇧⌃G/Alt+J and Shift+Alt+J ) actions:
+
+<https://blog.jetbrains.com/ruby/2014/03/whats-mining-multiple-cursors-and-selection/>
+
+<https://blog.jetbrains.com/phpstorm/2014/03/working-with-multiple-selection-in-phpstorm-8-eap/> (watch this!!)
+
+
+PhpStorm – Top Productivity Hacks and Shortcuts
+===============================================
+
+<http://www.sitepoint.com/phpstorm-top-productivity-hacks-shortcuts/>
+
+JetStorm extension for Chrome
+=============================
+
+<https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji>
+Type jb + tab in the browser 
+
+TYPO3 extension to generate PhpStorm meta data file for factory method auto completion.
+=======================================================================================
+
+<https://github.com/ingorenner/ext-phpstorm>
+
+Todo next major version
+=======================
+
+*   reinstall TypoScript plugin
+*   Export settings    -> On the main menu, choose File | Export Settings.
+      \-> key mapping should be sufficient 
+
+
+Live editing
+============
+
+file:///Applications/PhpStorm.app/plugins/JavaScriptDebugger/extensions/HowToInstallGoogleChromeExtension.html
+
+
+File:Standard.xml
+=================
+
+<http://wiki.typo3.org/File:Standard.xml>
+
+TIP
+===
+
+cmd + maj + u -> to swap to capital letter
+cmd + alt + u -> pop up diagram
+
+TIP
+===
+
+JetBrains PhpStorm lets you jump from your check-in comment to an issue in your task tracker.
+All you have to do is to define issue navigation patterns in the Settings | Version Control dialog:
+
+When you commit a changelist, and type the check-in comment, make sure it matches one of your issue navigation patterns. Later, when you browse through the changelists in the repository, such comments turn into hyperlinks:
+
+Clicking a hyperlink brings you directly to an issue in your task tracker.
+
+TS PLUGING
+==========
+
+<http://plugins.jetbrains.com/plugin/?idea&id=6965>
+
+Key should be placed
+====================
+
+/Users/fudriot/Library/Preferences/WebIde10
+
+Collection of Live Templates that makes editing and developing TYPO3 projects easier and more efficient
+=======================================================================================================
+
+<https://github.com/castiron/CIC-PhpStorm-Live-Templates>

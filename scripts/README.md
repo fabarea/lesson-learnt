@@ -7,3 +7,4 @@ You can create an alias like:
 ```
 alias pp='make -C ~/Notes/scripts'
 ```
+

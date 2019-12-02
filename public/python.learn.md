@@ -1,6 +1,4 @@
 ---
-date: 2019-03-21T20:44:17.000Z
-public: true
 title: Python
 ---
 

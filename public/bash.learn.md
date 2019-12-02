@@ -1,5 +1,4 @@
 ---
-date: 2019-11-21T11:34:32+01:00
 title: Bash - my stubborn donkey
 tags:
   - bash

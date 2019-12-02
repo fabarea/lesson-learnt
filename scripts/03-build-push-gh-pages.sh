@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source config.sh
+source scripts/config.sh
 
-cd "$TARGET_PATH"
+cd "$WORKING_DIRECTORY"
 
 print "Building..."
 mkdocs build

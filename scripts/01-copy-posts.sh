@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
+# I am obsolete. Remove me!
+exit
+
+set -euo pipefail
 source config.sh
 
 # Set counter variable

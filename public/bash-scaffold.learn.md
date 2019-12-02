@@ -1,5 +1,4 @@
 ---
-date: 2019-03-21T10:39:12.000Z
 title: Bash - script scaffold
 ---
 
