@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://learn.omic.ch/firewall-iptables.learn/">
+        <link rel="canonical" href="https://learn.omic.ch/ubuntu-fan.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Firewall - iptables</title>
+        <title>How to reduce the fan noise? - Lesson learnt!</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#commands-iptables" tabindex="1" class="md-skip">
+      <a href="#how-to-reduce-the-fan-noise" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Firewall - iptables
+                How to reduce the fan noise?
               
             </span>
           
@@ -408,20 +408,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Firewall - iptables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
       Firewall - iptables
     </a>
-    
   </li>
 
     
@@ -681,11 +672,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ubuntu-fan.learn/" title="How to reduce the fan noise?" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="How to reduce the fan noise?" class="md-nav__link md-nav__link--active">
       How to reduce the fan noise?
     </a>
+    
   </li>
 
     
@@ -716,69 +716,48 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/firewall-iptables.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/ubuntu-fan.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="commands-iptables">Commands IPTABLES</h2>
-<pre><code>    service iptables status
-    service iptables stop
-    service iptables start
+                <h1 id="how-to-reduce-the-fan-noise">How to reduce the fan noise?</h1>
+<h1 id="fan-less-computer">Fan less computer</h1>
+<p>https://primecomputer.ch/</p>
+<h1 id="my-list-of-devices">My list of devices</h1>
+<p>hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp3_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp4_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp5_input
+hwmon /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input</p>
+<h1 id="current-state-of-the-fan">Current state of the fan</h1>
+<p>⋊&gt; ~ cat /proc/acpi/ibm/fan                                                            18:14:35
+status:     enabled
+speed:      2863
+level:      auto</p>
+<p>⋊&gt; ~ cat /proc/acpi/ibm/fan                                                            18:27:33
+status:     enabled
+speed:      2677
+level:      1
+commands:   level <level> (<level> is 0-7, auto, disengaged, full-speed)
+commands:   enable, disable
+commands:   watchdog <timeout> (<timeout> is 0 (off), 1-120 (seconds))</p>
+<p>systemctl status thinkfan.service</p>
+<p>sudo systemctl status thinkfan
+sudo thinkfan -n</p>
+<h1 id="find-the-device-except-the-virtual">Find the device except the virtual</h1>
+<pre><code>find /sys/devices -type f -name &quot;temp*_input&quot; |grep -vi virtual
 </code></pre>
 
-<h1 id="example-rule">Example rule</h1>
-<h1 id="allow-outgoing-www">Allow outgoing www</h1>
-<pre><code>iptables -A OUTPUT -p tcp --sport 513:65535 --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --sport 80 --dport 513:65535 -j ACCEPT
-</code></pre>
-
-<h2 id="list-rules">LIST RULES</h2>
-<pre><code>iptables -L
-</code></pre>
-
-<h2 id="stop-firewall">STOP FIREWALL</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-</code></pre>
-
-<h2 id="enable-rule">ENABLE RULE</h2>
-<pre><code>iptables -A INPUT -i eth0 -p tcp --dport 20:22 -j ACCEPT;
-iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
-</code></pre>
-
-<h2 id="enable-dns-otherwise-slow-down-ssh-login">ENABLE DNS (OTHERWISE SLOW DOWN SSH LOGIN)</h2>
-<pre><code>iptables -A INPUT -p udp -s \$ISP_DNS_IP/32 --source-port 53 -d 0/0 -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT -&gt; (A TESTER)
-iptables -A INPUT -p udp --sport 53 -j ACCEPT -&gt; (A TESTER)
-</code></pre>
-
-<h2 id="accept-ping">ACCEPT PING</h2>
-<pre><code>iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-</code></pre>
-
-<h2 id="save-iptables">SAVE IPTABLES</h2>
-<pre><code>sudo sh -c &quot;iptables-save &gt; /etc/iptables.rules&quot;
-iptables-save &gt; /etc/iptables.rules
-</code></pre>
-
-<h2 id="restore-iptables-set-up">RESTORE IPTABLES SET UP</h2>
-<pre><code>echo '#!/bin/sh' &gt; /etc/network/if-pre-up.d/iptables-load
-echo &quot;iptables-restore &lt; /etc/iptables.rules&quot; &gt;&gt; /etc/network/if-pre-up.d/iptables-load
-chmod +x /etc/network/if-pre-up.d/iptables-load
-</code></pre>
-
-<p>hint: to set up an automatic save "if-post-down"
-https://help.ubuntu.com/community/IptablesHowTo</p>
-<h2 id="example-config-with-multiport">EXAMPLE CONFIG WITH MULTIPORT</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -m multiport -p tcp --dport www,ssh,sftp,https -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT
-iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-iptables -A INPUT -j LOG -m limit
-iptables -A INPUT -j REJECT
-
-iptables -L
-</code></pre>
+<h1 id="display-every-second-the-temperature">Display every second the temperature</h1>
+<p>while true; do sleep 1; sensors; done</p>
+<h1 id="configuration-file">Configuration file</h1>
+<p>sudo nano /etc/thinkfan.conf</p>
+<h1 id="help">Help</h1>
+<h2 id="official-documentation">Official documentation</h2>
+<p>https://thinkwiki.de/Thinkfan</p>
+<h2 id="how-to-control-fan-speed">How to control fan speed?</h2>
+<p>https://askubuntu.com/questions/22108/how-to-control-fan-speed#comment210139_46135</p>
+<h2 id="setting-up-thinkfan-for-thinkpad-t420">Setting up ThinkFan for Thinkpad T420</h2>
+<p>https://medium.com/@mirul/setting-up-thinkfan-for-thinkpad-t420-aaec5108f75f</p>
                 
                   
                 
@@ -799,7 +778,7 @@ iptables -L
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../editor-sublime.learn/" title="Sublime" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../t3.learn/" title="TYPO3 - knowledge base" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -808,25 +787,11 @@ iptables -L
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Sublime
+                TYPO3 - knowledge base
               </span>
             </div>
           </a>
         
-        
-          <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Firewall - UFW
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

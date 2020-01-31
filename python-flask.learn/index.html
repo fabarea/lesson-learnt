@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://learn.omic.ch/firewall-iptables.learn/">
+        <link rel="canonical" href="https://learn.omic.ch/python-flask.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Firewall - iptables</title>
+        <title>Python - Flask</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#commands-iptables" tabindex="1" class="md-skip">
+      <a href="#good-tutorial-related-to-flask" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Firewall - iptables
+                Python - Flask
               
             </span>
           
@@ -408,20 +408,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Firewall - iptables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
       Firewall - iptables
     </a>
-    
   </li>
 
     
@@ -621,11 +612,45 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../python-flask.learn/" title="Python - Flask" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python - Flask
+      </label>
+    
+    <a href="./" title="Python - Flask" class="md-nav__link md-nav__link--active">
       Python - Flask
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#good-tutorial-related-to-flask" class="md-nav__link">
+    Good tutorial related to Flask
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -703,8 +728,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#good-tutorial-related-to-flask" class="md-nav__link">
+    Good tutorial related to Flask
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -716,69 +755,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/firewall-iptables.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/python-flask.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="commands-iptables">Commands IPTABLES</h2>
-<pre><code>    service iptables status
-    service iptables stop
-    service iptables start
-</code></pre>
-
-<h1 id="example-rule">Example rule</h1>
-<h1 id="allow-outgoing-www">Allow outgoing www</h1>
-<pre><code>iptables -A OUTPUT -p tcp --sport 513:65535 --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --sport 80 --dport 513:65535 -j ACCEPT
-</code></pre>
-
-<h2 id="list-rules">LIST RULES</h2>
-<pre><code>iptables -L
-</code></pre>
-
-<h2 id="stop-firewall">STOP FIREWALL</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-</code></pre>
-
-<h2 id="enable-rule">ENABLE RULE</h2>
-<pre><code>iptables -A INPUT -i eth0 -p tcp --dport 20:22 -j ACCEPT;
-iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
-</code></pre>
-
-<h2 id="enable-dns-otherwise-slow-down-ssh-login">ENABLE DNS (OTHERWISE SLOW DOWN SSH LOGIN)</h2>
-<pre><code>iptables -A INPUT -p udp -s \$ISP_DNS_IP/32 --source-port 53 -d 0/0 -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT -&gt; (A TESTER)
-iptables -A INPUT -p udp --sport 53 -j ACCEPT -&gt; (A TESTER)
-</code></pre>
-
-<h2 id="accept-ping">ACCEPT PING</h2>
-<pre><code>iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-</code></pre>
-
-<h2 id="save-iptables">SAVE IPTABLES</h2>
-<pre><code>sudo sh -c &quot;iptables-save &gt; /etc/iptables.rules&quot;
-iptables-save &gt; /etc/iptables.rules
-</code></pre>
-
-<h2 id="restore-iptables-set-up">RESTORE IPTABLES SET UP</h2>
-<pre><code>echo '#!/bin/sh' &gt; /etc/network/if-pre-up.d/iptables-load
-echo &quot;iptables-restore &lt; /etc/iptables.rules&quot; &gt;&gt; /etc/network/if-pre-up.d/iptables-load
-chmod +x /etc/network/if-pre-up.d/iptables-load
-</code></pre>
-
-<p>hint: to set up an automatic save "if-post-down"
-https://help.ubuntu.com/community/IptablesHowTo</p>
-<h2 id="example-config-with-multiport">EXAMPLE CONFIG WITH MULTIPORT</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -m multiport -p tcp --dport www,ssh,sftp,https -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT
-iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-iptables -A INPUT -j LOG -m limit
-iptables -A INPUT -j REJECT
-
-iptables -L
-</code></pre>
+                  <h1>Python - Flask</h1>
+                
+                <h2 id="good-tutorial-related-to-flask">Good tutorial related to Flask</h2>
+<p>https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world</p>
                 
                   
                 
@@ -799,7 +782,7 @@ iptables -L
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../editor-sublime.learn/" title="Sublime" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../presentation-tools.learn/" title="Tool - WebSlides & Talk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -808,19 +791,19 @@ iptables -L
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Sublime
+                Tool - WebSlides & Talk
               </span>
             </div>
           </a>
         
         
-          <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../python.learn/" title="Python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Firewall - UFW
+                Python
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

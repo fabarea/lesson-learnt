@@ -1,0 +1,1063 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://learn.omic.ch/docker.learn/">
+      
+      
+        <meta name="author" content="Fabien Udriot">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+    
+    
+      
+        <title>Docker</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#docker-life-cycle" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://learn.omic.ch" title="Lesson learnt!" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Lesson learnt!
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Docker
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/fabarea/lesson-learnt/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://learn.omic.ch" title="Lesson learnt!" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Lesson learnt!
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/fabarea/lesson-learnt/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bash-scaffold.learn/" title="Bash - script scaffold" class="md-nav__link">
+      Bash - script scaffold
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bash.learn/" title="Bash - my stubborn donkey" class="md-nav__link">
+      Bash - my stubborn donkey
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-bitcoins/" title="Blockchain - Bitcoins" class="md-nav__link">
+      Blockchain - Bitcoins
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-boinc.learn/" title="Boinc" class="md-nav__link">
+      Boinc
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-fusion.learn/" title="BlockChain - Fusion" class="md-nav__link">
+      BlockChain - Fusion
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-gridcoin.learn/" title="BlockChain - GridCoin" class="md-nav__link">
+      BlockChain - GridCoin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-hex/" title="Blockchain - HEX" class="md-nav__link">
+      Blockchain - HEX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-iot.learn/" title="BlockChain - IoT" class="md-nav__link">
+      BlockChain - IoT
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../blockchain-talos.learn/" title="BlockChain - Talos" class="md-nav__link">
+      BlockChain - Talos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker-doxygen.learn/" title="Docker- Doxygen" class="md-nav__link">
+      Docker- Doxygen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker-mariadb.learn/" title="Docker - MariaDB and MySQL" class="md-nav__link">
+      Docker - MariaDB and MySQL
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker-php.learn/" title="Docker - PHP" class="md-nav__link">
+      Docker - PHP
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
+      Docker
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../editor-atom.learn/" title="Atom-editor" class="md-nav__link">
+      Atom-editor
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../editor-sublime.learn/" title="Sublime" class="md-nav__link">
+      Sublime
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
+      Firewall - iptables
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-nav__link">
+      Firewall - UFW
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ide.resource/" title="IDE online" class="md-nav__link">
+      IDE online
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../inotify.learn/" title="Inotify - file watcher" class="md-nav__link">
+      Inotify - file watcher
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-microk8s.learn/" title="Kubernetes - MicroK8s" class="md-nav__link">
+      Kubernetes - MicroK8s
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes.learn/" title="Kubernetes - MicroK8s" class="md-nav__link">
+      Kubernetes - MicroK8s
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../machine-learning.learn/" title="Machine-learning" class="md-nav__link">
+      Machine-learning
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../makefile.learn/" title="Makefile - scaffolding" class="md-nav__link">
+      Makefile - scaffolding
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-composer.learn/" title="PHP - Composer" class="md-nav__link">
+      PHP - Composer
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-fpm.learn/" title="PHP - FPM" class="md-nav__link">
+      PHP - FPM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-phpcs.learn/" title="PHP - PHPCS" class="md-nav__link">
+      PHP - PHPCS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-phpmd.learn/" title="PHP - PHPmd" class="md-nav__link">
+      PHP - PHPmd
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-phpspec.learn/" title="PHP - Phpspec" class="md-nav__link">
+      PHP - Phpspec
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-phpunit.learn/" title="PHP - PHPUnit" class="md-nav__link">
+      PHP - PHPUnit
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php-quick-template-engine.learn/" title="PHP - Quick template engine" class="md-nav__link">
+      PHP - Quick template engine
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../php.learn/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../presentation-tools.learn/" title="Tool - WebSlides & Talk" class="md-nav__link">
+      Tool - WebSlides & Talk
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python-flask.learn/" title="Python - Flask" class="md-nav__link">
+      Python - Flask
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python.learn/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sveltejs.learn/" title="SvelteJS" class="md-nav__link">
+      SvelteJS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../t3-install.learn/" title="TYPO3 - Install" class="md-nav__link">
+      TYPO3 - Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../t3.learn/" title="TYPO3 - knowledge base" class="md-nav__link">
+      TYPO3 - knowledge base
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ubuntu-fan.learn/" title="How to reduce the fan noise?" class="md-nav__link">
+      How to reduce the fan noise?
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/docker.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h2 id="docker-life-cycle">Docker life cycle</h2>
+<pre><code class="sh"># Building image
+# --rm       Remove intermediate containers after a successful build (default true)
+# --no-cache Do not use cache when building the image
+
+docker build --rm -t fab1en/doxygen .
+docker build --rm -t fab1en/doxygen:1.0.0 .
+docker build --no-cache=true -t fab/doxygen .
+
+# Show all images
+docker images
+docker rmi fab1en/doxygen:1.0.0
+
+# Run container
+# --rm Automatically remove the container when it exits
+docker run -it --rm ubuntu:14.04
+
+# Show docker process
+docker ps -a
+
+docker-kill-all
+
+docker-clean-containers
+
+docker run -it -p 49800:80 -p 49801:6081 fudriot/drupal /bin/bash
+docker run -it -p 8080:80 -p 49801:6081 fudriot/drupal supervisord
+
+# Export container data
+docker export
+
+# Push the built image. Can be pushed straight after building.
+docker push fab1en/athenapdf # equivalent to fab1en/athenapdf:latest
+docker push fab1en/athenapdf:1.0.0
+
+# Tag an image. This will create an image ready to push.
+docker tag local-image:tagname new-repo:tagname
+
+# Commit a container. This will create an &quot;image&quot; from the container ready to be pushed
+docker commit -a &quot;Author&quot; local-container fab1en/doxygen
+docker push fab1en/doxygen
+
+tail -f /var/log/supervisor/supervisord.log 
+</code></pre>
+
+<h2 id="restart-automatically">Restart automatically</h2>
+<pre><code>docker update --restart=no my-container
+docker update --restart=always my-container
+</code></pre>
+
+<p>The info is in <code>/var/lib/docker/container/hostconfig.json</code></p>
+<p>check for <code>RestartPolicy.Name = "always"</code></p>
+<h2 id="how-to-run-portainer">How to run Portainer?</h2>
+<pre><code class="sh">docker run -d -v &quot;/var/run/docker.sock:/var/run/docker.sock&quot; -p 9000:9000 --name portainer portainer/portainer
+</code></pre>
+
+<h2 id="what-possible-tag-to-build-a-debian-image">What possible tag to build a Debian image?</h2>
+<p>See possible tags https://hub.docker.com/_/debian</p>
+<pre><code class="sh"># 8 == jessie
+# 9 == stretch
+# 10 == buster
+FROM debian:8
+# Would be equivalent to:
+FROM debian:jessie
+</code></pre>
+
+<h2 id="how-can-i-enter-container">How can I enter container ?</h2>
+<p>We should used  <code>exec</code> instead of <code>run</code>. The command "run" will create a new container whereas "exec" will be used to manipulate a running instance. </p>
+<pre><code class="sh"># Selenium
+docker-compose exec selenium-chrome /bin/bash
+sudo su
+
+# if CMD[&quot;/bin/bash&quot;] we can omit the shell
+docker run -it --rm debian
+
+# With docker-compose. Assuming &quot;db&quot; is the service name
+docker-compose exec db bash
+docker-compose exec db su www-data
+
+# If the container has an entry point we must override it, for instance:
+docker run --entrypoint &quot;sh&quot; -it --rm marpteam/marp-cli
+</code></pre>
+
+<h2 id="dockerizing-a-nodejs-web-app">Dockerizing a Node.js web app</h2>
+<pre><code class="sh">docker build -t &lt;your username&gt;/node-web-app .
+docker images
+docker run -p 49160:8080 -d &lt;your username&gt;/node-web-app
+docker logs &lt;container id&gt;
+docker exec -it &lt;container id&gt; /bin/bash
+curl -i localhost:49160
+</code></pre>
+
+<p><a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">https://nodejs.org/en/docs/guides/nodejs-docker-webapp/</a></p>
+<h2 id="edit-files-in-docker-containers">Edit files in Docker containers</h2>
+<ol>
+<li>
+<p>based on zed but didn't fully worked
+    <a href="http://blog.sequenceiq.com/blog/2014/09/24/edit-files-docker/">http://blog.sequenceiq.com/blog/2014/09/24/edit-files-docker/</a></p>
+</li>
+<li>
+<p>Did not test: you find yourself editing nginx config files? Don’t do it, use the great generic nginx appliance from Jeff Lindsay
+    <a href="https://github.com/progrium/nginx-appliance">https://github.com/progrium/nginx-appliance</a></p>
+</li>
+<li>
+<p>Other solution from Blog</p>
+<p>docker run -v /usr/local/bin:/target jpetazzo/nsenter
+PID=$(docker inspect --format {{.State.Pid}} htdocs_web_1)
+nsenter --target $PID --mount --uts --ipc --net --pid</p>
+</li>
+</ol>
+<p><a href="http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/">http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/</a></p>
+<pre><code>create an alias
+docker-enter() { PID=$(docker inspect --format {{.State.Pid}} "$@"); nsenter --target $PID --mount --uts --ipc --net --pid;}
+</code></pre>
+<h2 id="docker-explained-how-to-containerize-and-use-nginx-as-a-proxy">Docker Explained: How To Containerize and Use Nginx as a Proxy</h2>
+<p><a href="https://www.digitalocean.com/community/tutorials/docker-explained-how-to-containerize-and-use-nginx-as-a-proxy">https://www.digitalocean.com/community/tutorials/docker-explained-how-to-containerize-and-use-nginx-as-a-proxy</a></p>
+<h2 id="openvpn-on-docker">OpenVPN on docker</h2>
+<p>with upstream daemon explained
+<a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04</a></p>
+<h2 id="how-to-dockerise-and-deploy-multiple-wordpress-applications-on-ubuntu">How To Dockerise And Deploy Multiple WordPress Applications On Ubuntu</h2>
+<ul>
+<li>with memory limit</li>
+<li>with different port</li>
+<li>example of reverse proxy in the comments</li>
+<li>question of volumes
+<a href="https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-multiple-wordpress-applications-on-ubuntu">https://www.digitalocean.com/community/tutorials/how-to-dockerise-and-deploy-multiple-wordpress-applications-on-ubuntu</a></li>
+</ul>
+<h2 id="docker-gen">Docker-gen</h2>
+<p>docker-gen is a file generator that renders templates using docker container meta-data.</p>
+<p>There are three common ways to run docker-gen:</p>
+<pre><code>on the host
+bundled in a container with another application
+separate standalone containers
+</code></pre>
+<p><a href="https://github.com/jwilder/docker-gen">https://github.com/jwilder/docker-gen</a></p>
+<h2 id="fully-integrate-containers-in-your-network">Fully integrate containers in your network.</h2>
+<p><a href="https://github.com/xlucas/docker-flatip#adding_ip">https://github.com/xlucas/docker-flatip#adding_ip</a></p>
+<h2 id="persistent-volumes-with-docker-data-only-container-pattern">Persistent volumes with Docker - Data-only container pattern</h2>
+<p><a href="http://container42.com/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/">http://container42.com/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/</a></p>
+<h2 id="what-is-the-difference-between-cmd-and-entrypoint">What is the difference between CMD and ENTRYPOINT?</h2>
+<ul>
+<li>CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.</li>
+</ul>
+<pre><code class="sh">CMD [&quot;/bin/sh&quot;]
+</code></pre>
+
+<ul>
+<li>ENTRYPOINT configures a container that will run as an executable.</li>
+</ul>
+<pre><code class="sh">ENTRYPOINT [&quot;redis&quot;, &quot;-H&quot;, &quot;something&quot;, &quot;-u&quot;, &quot;toto&quot;]
+ENTRYPOINT [&quot;/athenapdf-service/conf/entrypoint.sh&quot;]
+</code></pre>
+
+<h2 id="examples-of-docker-configuration-for-typo3-cms">Examples of Docker configuration for TYPO3 CMS</h2>
+<p>Docker based TYPO3 Installation based on composer</p>
+<p><a href="https://github.com/dkd/docker-typo3">https://github.com/dkd/docker-typo3</a></p>
+<p><a href="https://registry.hub.docker.com/u/hbokh/docker-typo3-cms-wheezy/">https://registry.hub.docker.com/u/hbokh/docker-typo3-cms-wheezy/</a></p>
+<p><a href="https://registry.hub.docker.com/u/dkdde/typo3/">https://registry.hub.docker.com/u/dkdde/typo3/</a></p>
+<p><a href="https://registry.hub.docker.com/u/hbokh/docker-typo3-cms/">https://registry.hub.docker.com/u/hbokh/docker-typo3-cms/</a> (with github)
+<a href="https://github.com/million12/docker-typo3-flow-neos-abstract">https://github.com/million12/docker-typo3-flow-neos-abstract</a> (with github)</p>
+<h2 id="what-challenges-to-avoid-when-migrating-to-docker">What Challenges to Avoid when Migrating to Docker</h2>
+<p><a href="http://logz.io/migrating-to-docker/">http://logz.io/migrating-to-docker/</a></p>
+<p>Virtualization VS containerization
+<a href="http://containerz.blogspot.ch/2015/03/virtualization-vs-containerization.html">http://containerz.blogspot.ch/2015/03/virtualization-vs-containerization.html</a></p>
+<h2 id="a-not-very-short-introduction-to-docker">A Not Very Short Introduction to Docker</h2>
+<p><a href="http://anders.janmyr.com/2015/03/a-not-very-short-introduction-to-docker.html">http://anders.janmyr.com/2015/03/a-not-very-short-introduction-to-docker.html</a></p>
+<h2 id="how-to-inspect-the-container">How to inspect the container?</h2>
+<pre><code class="sh"># Tell the image used to build the container
+docker inspect -f &quot;{{ .Config.Image }}&quot; web
+
+# Tell the IP address of the given container
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web
+</code></pre>
+
+<p>How do I know the IP of the </p>
+<h2 id="how-to-remove-all-stopped-containers">How to remove all stopped containers?</h2>
+<pre><code>docker rm $(docker ps -a -q)
+</code></pre>
+
+<h2 id="how-to-remove-all-untagged-images">How to remove all untagged images?</h2>
+<pre><code>docker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &quot;{print $3}&quot;) 
+</code></pre>
+
+<h2 id="detach-attach">Detach / attach</h2>
+<pre><code>docker run -d CONTAINER
+
+docker attach NAME (?)
+docker attach --sig-proxy=false NAME 
+but I cannot exit it, not with CTRL-C, nor with CTRL-P + CTRL-Q (like suggested in the similar question above)
+
+To recap:
+docker run -t -i → can be detached with ^P^Q and reattached with docker attach
+docker run -i → cannot be detached with ^P^Q; will disrupt stdin
+docker run → cannot be detached with ^P^Q; can SIGKILL client; can reattach with docker attach
+</code></pre>
+
+<h2 id="port-forwarding">Port forwarding</h2>
+<p>You can do it temporarily, using ssh:</p>
+<p>boot2docker ssh -L 8000:localhost:8000</p>
+<p>or you can set up a permanent VirtualBox NAT Port forwarding:</p>
+<p>VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port8000,tcp,,8000,,8000";</p>
+<p><a href="https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md">https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md</a></p>
+<h2 id="dockerignore">Dockerignore</h2>
+<p>.dockerignore is to prevent files from being added to the initial build context that is sent to the docker daemon when you do docker build, it doesn't create a global rule for excluding files from being created in all images generated by a Dockerfile.</p>
+<p>It's important to note that each RUN statement will generate a new image, with the parent of that image being the image generated by the Dockerfile statement above it. Try collapsing your RUN statements into a single one to reduce image size:</p>
+<pre><code>RUN librarian-puppet install &amp;&amp;\\
+</code></pre>
+
+<h2 id="docker-networking-101-the-defaults">Docker Networking 101 – The defaults</h2>
+<p><a href="http://www.dasblinkenlichten.com/docker-networking-101/">http://www.dasblinkenlichten.com/docker-networking-101/</a></p>
+<h2 id="php-fpm-in-docker">PHP-FPM in Docker</h2>
+<p><a href="http://blog.famillecollet.com/post/2014/12/11/PHP-FPM-in-Docker">http://blog.famillecollet.com/post/2014/12/11/PHP-FPM-in-Docker</a></p>
+<h2 id="how-to-optimize-your-dockerfile">How to Optimize Your Dockerfile</h2>
+<p><a href="http://blog.tutum.co/2014/10/22/how-to-optimize-your-dockerfile/">http://blog.tutum.co/2014/10/22/how-to-optimize-your-dockerfile/</a></p>
+<h2 id="docker-global-hack-day-fig-demod-by-daniel-nephin-of-yelp">Docker Global Hack Day: Fig Demo'd by Daniel Nephin of Yelp</h2>
+<p><a href="https://www.youtube.com/watch?v=bYfwFkeeUL4">https://www.youtube.com/watch?v=bYfwFkeeUL4</a> (example with wreathedocs)</p>
+<h2 id="introduction-to-dockerfiles">Introduction to Dockerfiles</h2>
+<p><a href="http://formatccolon.com/introduction-to-dockerfiles/?utm_source=Docker+News&amp;utm_campaign=3432c436f6-Docker_Weekly_November_12th_201411_11_2014&amp;utm_medium=email&amp;utm_term=0_c0995b6e8f-3432c436f6-235802529">http://formatccolon.com/introduction-to-dockerfiles/?utm_source=Docker+News&amp;utm_campaign=3432c436f6-Docker_Weekly_November_12th_201411_11_2014&amp;utm_medium=email&amp;utm_term=0_c0995b6e8f-3432c436f6-235802529</a></p>
+<h2 id="deploying-go-servers-with-docker">Deploying Go servers with Docker</h2>
+<p><a href="http://blog.golang.org/docker">http://blog.golang.org/docker</a></p>
+<p>CoreOS se paye Quay.io, un référentiel privé pour les conteneurs Docker
+<a href="http://www.silicon.fr/coreos-se-paye-quay-io-referentiel-prive-les-conteneurs-docker-96142.html">http://www.silicon.fr/coreos-se-paye-quay-io-referentiel-prive-les-conteneurs-docker-96142.html</a></p>
+<p>système de packaging qui permet de prendre n’importe quel code source, n’importe quelle application et de l’envelopper, avec toutes ses dépendances, dans un objet unique
+<a href="http://www.silicon.fr/docker-google-federe-alliance-anti-aws-96219.html">http://www.silicon.fr/docker-google-federe-alliance-anti-aws-96219.html</a></p>
+<h2 id="jolici-run-your-travisci-builds-locally">JoliCi - Run your TravisCi builds locally</h2>
+<p><a href="https://github.com/jolicode/JoliCi">https://github.com/jolicode/JoliCi</a></p>
+<h2 id="lessons-learned-after-dockerizing-a-rails-app">Lessons learned after "Dockerizing" a Rails app.</h2>
+<p>&lt;http://danielmartins.ninja/posts/a-week-of-docker.html</p>
+<h2 id="la-folie-docker">La folie Docker</h2>
+<p><a href="http://linuxfr.org/news/la-folie-docker">http://linuxfr.org/news/la-folie-docker</a></p>
+<p><a href="http://ippon.developpez.com/tutoriels/virtualisation/docker-presentation-part-2/">http://ippon.developpez.com/tutoriels/virtualisation/docker-presentation-part-2/</a></p>
+<h2 id="terminology">Terminology</h2>
+<p>container -&gt; volume
+template </p>
+<h2 id="alternative-as-supervisord">Alternative as supervisord?</h2>
+<p><a href="http://blog.sequenceiq.com/blog/2014/05/09/building-the-build-environment-with-ansible-and-docker/">http://blog.sequenceiq.com/blog/2014/05/09/building-the-build-environment-with-ansible-and-docker/</a></p>
+<p>Example:</p>
+<p><a href="https://github.com/ricardoamaro/docker-drupal">https://github.com/ricardoamaro/docker-drupal</a></p>
+<p><a href="https://github.com/tutumcloud/tutum-docker-mysql">https://github.com/tutumcloud/tutum-docker-mysql</a></p>
+<p>Je ne l'ai pas mis dans la news mais notre dernier jouet à la mode c'est Docker, si vous voulez tester du Tuleap dans du Docker c'est:
+$&gt; docker run -ti -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 22:22 -v /srv/docker/pink:/data enalean/tuleap-aio
+Plus d'info sur l'index docker
+On essaye de documenter nos trouvailles ici sur le blog</p>
+<p>&lt;http://www.enalean.com/en/Pack-Tuleap-in-Docker-container-part-1</p>
+<h1 id="how-to-manage-your-docker-image">How to Manage your Docker Image</h1>
+<p><a href="https://gist.github.com/wsargent/7049221">https://gist.github.com/wsargent/7049221</a></p>
+<p><a href="https://portal-hoth.basespace.illumina.com/docs/content/documentation/native-apps/manage-docker-image">https://portal-hoth.basespace.illumina.com/docs/content/documentation/native-apps/manage-docker-image</a></p>
+<h1 id="effortless-docker-in-a-box-for-unsupported-docker-platforms-like-the-mac">Effortless Docker-in-a-box for unsupported Docker platforms, like the Mac</h1>
+<p><a href="http://fnichol.github.io/dvm/">http://fnichol.github.io/dvm/</a></p>
+<pre><code>brew cask install vagrant    --appdir=/Applications
+brew cask install virtualbox --appdir=/Applications
+</code></pre>
+
+<h2 id="gerer-les-containers-avec-docker">Gérer les containers avec Docker</h2>
+<p><a href="http://linuxfr.org/news/gerer-les-containers-avec-docker">http://linuxfr.org/news/gerer-les-containers-avec-docker</a></p>
+<p>SSH HostKeys Plugin for Dokku
+Manage hostkeys (for .ssh/known_hosts) to your container environment</p>
+<p><a href="https://github.com/cedricziel/dokku-hostkeys-plugin">https://github.com/cedricziel/dokku-hostkeys-plugin</a></p>
+<h2 id="pack2er">Pack2er</h2>
+<p>What Is Packer?
+Packer is an open source tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel. </p>
+<p><a href="http://www.packer.io/downloads.html">http://www.packer.io/downloads.html</a></p>
+<p><a href="https://github.com/datenbetrieb/packer-boxdefinitions">https://github.com/datenbetrieb/packer-boxdefinitions</a></p>
+<h2 id="drupal-on-docker">Drupal on Docker</h2>
+<p><a href="http://robknight.org.uk/blog/2013/05/drupal-on-docker/">http://robknight.org.uk/blog/2013/05/drupal-on-docker/</a></p>
+<h2 id="deploying-django-using-docker">Deploying django using docker</h2>
+<p><a href="http://agiliq.com/blog/2013/06/deploying-django-using-docker/">http://agiliq.com/blog/2013/06/deploying-django-using-docker/</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../docker-php.learn/" title="Docker - PHP" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker - PHP
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../editor-atom.learn/" title="Atom-editor" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Atom-editor
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

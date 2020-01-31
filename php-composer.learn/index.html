@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://learn.omic.ch/firewall-iptables.learn/">
+        <link rel="canonical" href="https://learn.omic.ch/php-composer.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Firewall - iptables</title>
+        <title>PHP - Composer</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#commands-iptables" tabindex="1" class="md-skip">
+      <a href="#plugin-composer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Firewall - iptables
+                PHP - Composer
               
             </span>
           
@@ -408,20 +408,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Firewall - iptables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
       Firewall - iptables
     </a>
-    
   </li>
 
     
@@ -513,11 +504,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../php-composer.learn/" title="PHP - Composer" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="PHP - Composer" class="md-nav__link md-nav__link--active">
       PHP - Composer
     </a>
+    
   </li>
 
     
@@ -716,69 +716,153 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/firewall-iptables.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/php-composer.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="commands-iptables">Commands IPTABLES</h2>
-<pre><code>    service iptables status
-    service iptables stop
-    service iptables start
+                <h2 id="plugin-composer">Plugin composer</h2>
+<p><a href="https://github.com/hirak/prestissimo">https://github.com/hirak/prestissimo</a></p>
+<pre><code>composer global require hirak/prestissimo
 </code></pre>
-
-<h1 id="example-rule">Example rule</h1>
-<h1 id="allow-outgoing-www">Allow outgoing www</h1>
-<pre><code>iptables -A OUTPUT -p tcp --sport 513:65535 --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --sport 80 --dport 513:65535 -j ACCEPT
+<h1 id="update-certificate">Update certificate</h1>
+<p>composer config -d=. --global cafile '/usr/local/etc/openssl/cert.pem'</p>
+<h1 id="in-composerjson">In composer.json</h1>
+<p>"replace": {
+    "parsedown": "self.version",
+    "typo3-ter/parsedown": "self.version"
+  },</p>
+<h1 id="checking-dependencies-for-bad-patterns">Checking dependencies for bad patterns</h1>
+<p>composer validate -A --strict</p>
+<p><a href="http://seld.be/notes/new-composer-patterns?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+php-blog-seld+%28Seld.be+%3E+Blog+%3E+PHP%29">http://seld.be/notes/new-composer-patterns?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+php-blog-seld+%28Seld.be+%3E+Blog+%3E+PHP%29</a></p>
+<h1 id="excluding-paths-from-the-optimized-classmap">Excluding paths from the optimized classmap</h1>
+<p>composer dump-autoload -o
+composer dump-autoload --optimized</p>
+<p>"autoload": {
+    "psr-4": { "Nelmio\CorsBundle\": "" },
+    "exclude-from-classmap": ["/Tests/"]
+},</p>
+<p><a href="http://seld.be/notes/new-composer-patterns?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+php-blog-seld+%28Seld.be+%3E+Blog+%3E+PHP%29">http://seld.be/notes/new-composer-patterns?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+php-blog-seld+%28Seld.be+%3E+Blog+%3E+PHP%29</a></p>
+<h2 id="post-script">Post script</h2>
+<pre><code>"scripts": {
+    "post-autoload-dump": "Helhum\\ClassAliasLoader\\Composer\\ClassAliasGenerator::generateAliasMap" 
+},
 </code></pre>
-
-<h2 id="list-rules">LIST RULES</h2>
-<pre><code>iptables -L
+<p>Here was the commands I run on repository <a href="https://git.typo3.org/TYPO3CMS/Distributions/Base.git">https://git.typo3.org/TYPO3CMS/Distributions/Base.git</a> for the 6.2.8 release: <a href="https://git.typo3.org/Packages/TYPO3.CMS.git">https://git.typo3.org/Packages/TYPO3.CMS.git</a></p>
+<p>Make sure to have the Gerrit Hook!</p>
+<pre><code>    -&gt; edit composer.json with 6.2.11
+    git diff
+    git ci -am "[TASK] Update composer.json for 6.2.11"
+    git tag 6.2.11
+    -&gt; edit composer.json with dev-master
+    git diff
+    git ci -am "[TASK] Update composer.json for master"
+    git push or git review
+    git push --tags
 </code></pre>
-
-<h2 id="stop-firewall">STOP FIREWALL</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
+<h2 id="slides-you-thought-composer-couldnt-do-that">Slides - You thought Composer couldn't do that?</h2>
+<p><a href="http://www.naderman.de/slippy/src/?file=2012-11-22-You-Thought-Composer-Couldnt-Do-That.html">http://www.naderman.de/slippy/src/?file=2012-11-22-You-Thought-Composer-Couldnt-Do-That.html</a></p>
+<p>composer show --platform
+composer show --installed</p>
+<p>-&gt; force update
+<a href="https://packagist.org/packages/typo3/cms-base-distribution">https://packagist.org/packages/typo3/cms-base-distribution</a></p>
+<h2 id="composer">Composer</h2>
+<p>composer install --ignore-platform-reqs</p>
+<h2 id="on-review">On Review</h2>
+<p><a href="https://review.typo3.org/#/admin/groups/64,members">https://review.typo3.org/#/admin/groups/64,members</a> (Leader, required for pushing tag?)
+<a href="https://review.typo3.org/#/admin/groups/471,members">https://review.typo3.org/#/admin/groups/471,members</a></p>
+<h2 id="composer-virtual-packages">Composer &amp; virtual packages</h2>
+<p><a href="http://devedge.wordpress.com/2014/09/27/composer-and-virtual-packages/">http://devedge.wordpress.com/2014/09/27/composer-and-virtual-packages/</a></p>
+<h2 id="personal-packagist-with-toran-proxy">Personal Packagist with Toran Proxy</h2>
+<p><a href="http://www.sitepoint.com/personal-packagist-toran-proxy/">http://www.sitepoint.com/personal-packagist-toran-proxy/</a></p>
+<p>does anyone know if it is possible to require TYPO3 6.2 "dev" with composer?
+"typo3/cms": "dev-TYPO3_6-2"</p>
+<h1 id="install-composer-globally">Install composer globally</h1>
+<pre><code>brew update
+brew tap homebrew/homebrew-php
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew install php55-intl
+brew install homebrew/php/composer
 </code></pre>
-
-<h2 id="enable-rule">ENABLE RULE</h2>
-<pre><code>iptables -A INPUT -i eth0 -p tcp --dport 20:22 -j ACCEPT;
-iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
+<h2 id="using-composer-without-gitignoring-vendor">Using Composer Without GitIgnoring Vendor</h2>
+<p><a href="http://www.lornajane.net/posts/2014/using-composer-without-gitignoring">http://www.lornajane.net/posts/2014/using-composer-without-gitignoring</a></p>
+<h1 id="use-composer-to-quickly-initialize-your-typo3-projects">Use composer to quickly initialize your TYPO3 projects</h1>
+<p><a href="http://blog.cedric-ziel.com/articles/creating-a-typo3-installation-by-composer/">http://blog.cedric-ziel.com/articles/creating-a-typo3-installation-by-composer/</a></p>
+<h2 id="have-composer-update-get-latest-version-from-git-repo">have composer update get latest version from git repo</h2>
+<p><a href="http://stackoverflow.com/questions/14595772/have-composer-update-get-latest-version-from-git-repo">http://stackoverflow.com/questions/14595772/have-composer-update-get-latest-version-from-git-repo</a></p>
+<h2 id="composer-package-management-for-php-silver-bullet">Composer - Package Management for PHP. Silver Bullet?</h2>
+<p><a href="http://www.slideshare.net/chebba/composer-package-management-for-php-silver-bullet">http://www.slideshare.net/chebba/composer-package-management-for-php-silver-bullet</a></p>
+<h2 id="minimum-stability-root-only">minimum-stability (root-only)</h2>
+<p>This defines the default behavior for filtering packages by stability. This defaults to stable, so if you rely on a dev package, you should specify it in your file to avoid surprises.</p>
+<pre><code>"minimum-stability": "dev"
 </code></pre>
-
-<h2 id="enable-dns-otherwise-slow-down-ssh-login">ENABLE DNS (OTHERWISE SLOW DOWN SSH LOGIN)</h2>
-<pre><code>iptables -A INPUT -p udp -s \$ISP_DNS_IP/32 --source-port 53 -d 0/0 -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT -&gt; (A TESTER)
-iptables -A INPUT -p udp --sport 53 -j ACCEPT -&gt; (A TESTER)
+<h2 id="option-dev">option --dev</h2>
+<pre><code>"require-dev": {
+    "phpunit/phpunit": "3.7.*"
+}
 </code></pre>
-
-<h2 id="accept-ping">ACCEPT PING</h2>
-<pre><code>iptables -A INPUT -i eth0 -p icmp -j ACCEPT
+<h2 id="composerinstallers">composer/installers</h2>
+<pre><code>{
+    "config": {
+        "vendor-dir": "lib/vendor"
+    },
+    "repositories": {
+        "symfony": {
+            "type": "package",
+            "package": {
+                "name": "symfony/symfony1",
+                "version": "1.4",
+                "dist": {
+                    "url": "https://github.com/symfony/symfony1/zipball/1.4",
+                    "type": "zip"
+                }
+            }
+        },
+        "sfResquePlugin" : {
+            "type": "package",
+            "package": {
+                "name": "devpips/sfResquePlugin",
+                "type": "symfony1-plugin",
+                "version": "0.1",
+                "dist": {
+                    "url": "https://github.com/devpips/sfResquePlugin/zipball/master",
+                    "type": "zip"
+                }
+            }
+        }
+    },
+    "require": {
+        "composer/installers": "dev-master",
+        "symfony/symfony1": "1.4",
+        "devpips/sfResquePlugin":"0.1"
+    }
+}
 </code></pre>
-
-<h2 id="save-iptables">SAVE IPTABLES</h2>
-<pre><code>sudo sh -c &quot;iptables-save &gt; /etc/iptables.rules&quot;
-iptables-save &gt; /etc/iptables.rules
-</code></pre>
-
-<h2 id="restore-iptables-set-up">RESTORE IPTABLES SET UP</h2>
-<pre><code>echo '#!/bin/sh' &gt; /etc/network/if-pre-up.d/iptables-load
-echo &quot;iptables-restore &lt; /etc/iptables.rules&quot; &gt;&gt; /etc/network/if-pre-up.d/iptables-load
-chmod +x /etc/network/if-pre-up.d/iptables-load
-</code></pre>
-
-<p>hint: to set up an automatic save "if-post-down"
-https://help.ubuntu.com/community/IptablesHowTo</p>
-<h2 id="example-config-with-multiport">EXAMPLE CONFIG WITH MULTIPORT</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -m multiport -p tcp --dport www,ssh,sftp,https -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT
-iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-iptables -A INPUT -j LOG -m limit
-iptables -A INPUT -j REJECT
-
-iptables -L
-</code></pre>
+<h2 id="file">File</h2>
+<p>packages.json (local)
+composer.json (server)</p>
+<p>Example: 
+<a href="http://ci.typo3.robertlemke.net/job/composer-packages/ws/repository/packages.json">http://ci.typo3.robertlemke.net/job/composer-packages/ws/repository/packages.json</a></p>
+<p><a href="http://etobi.de/composer/packages.json">http://etobi.de/composer/packages.json</a></p>
+<p>With custom installer path
+{
+    "require": {
+        "composer/installers": "*",
+        "typo3/cms-rss_display": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+            "htdocs/typo3conf/ext/{$name}/": [
+                "typo3/cms-rss_display"
+            ]
+        }
+    }
+}</p>
+<h2 id="part-1-what-why">Part 1 – What &amp; Why</h2>
+<p><a href="http://nelm.io/blog/2011/12/composer-part-1-what-why/">http://nelm.io/blog/2011/12/composer-part-1-what-why/</a></p>
+<h2 id="talking-about-composer-a-package-manager-for-php">Talking about Composer, a package manager for PHP</h2>
+<p><a href="http://blog.andho.com/2011-12-23/talking-about-composer-a-package-manager-for-php/">http://blog.andho.com/2011-12-23/talking-about-composer-a-package-manager-for-php/</a></p>
+<h2 id="composer-package-management-for-php-silver-bullet_1">Composer - Package Management for PHP. Silver Bullet?</h2>
+<p><a href="http://www.slideshare.net/chebba/composer-package-management-for-php-silver-bullet">http://www.slideshare.net/chebba/composer-package-management-for-php-silver-bullet</a> (shared slides)</p>
                 
                   
                 
@@ -799,7 +883,7 @@ iptables -L
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../editor-sublime.learn/" title="Sublime" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../makefile.learn/" title="Makefile - scaffolding" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -808,19 +892,19 @@ iptables -L
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Sublime
+                Makefile - scaffolding
               </span>
             </div>
           </a>
         
         
-          <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../php-fpm.learn/" title="PHP - FPM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Firewall - UFW
+                PHP - FPM
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

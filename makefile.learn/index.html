@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://learn.omic.ch/firewall-iptables.learn/">
+        <link rel="canonical" href="https://learn.omic.ch/makefile.learn/">
       
       
         <meta name="author" content="Fabien Udriot">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Firewall - iptables</title>
+        <title>Makefile - scaffolding</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#commands-iptables" tabindex="1" class="md-skip">
+      <a href="#example-of-makefile-for-php-script" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Firewall - iptables
+                Makefile - scaffolding
               
             </span>
           
@@ -408,20 +408,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Firewall - iptables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../firewall-iptables.learn/" title="Firewall - iptables" class="md-nav__link">
       Firewall - iptables
     </a>
-    
   </li>
 
     
@@ -501,11 +492,59 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../makefile.learn/" title="Makefile - scaffolding" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Makefile - scaffolding
+      </label>
+    
+    <a href="./" title="Makefile - scaffolding" class="md-nav__link md-nav__link--active">
       Makefile - scaffolding
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-makefile-for-php-script" class="md-nav__link">
+    Example of Makefile for PHP script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-coding-style-guide-of-a-makefile" class="md-nav__link">
+    What is the coding style guide of a Makefile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-could-be-a-makefile-scaffold" class="md-nav__link">
+    What could be a Makefile scaffold?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -703,8 +742,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-makefile-for-php-script" class="md-nav__link">
+    Example of Makefile for PHP script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-coding-style-guide-of-a-makefile" class="md-nav__link">
+    What is the coding style guide of a Makefile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-could-be-a-makefile-scaffold" class="md-nav__link">
+    What could be a Makefile scaffold?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -716,68 +783,35 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/firewall-iptables.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fabarea/lesson-learnt/edit/master/public/makefile.learn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="commands-iptables">Commands IPTABLES</h2>
-<pre><code>    service iptables status
-    service iptables stop
-    service iptables start
+                  <h1>Makefile - scaffolding</h1>
+                
+                <p>Makefile are great in the sense they simplify complex commands in a straightforward manner. Although they are simple to write and handy to use, the syntax a bit "old-school" and quite error prone. This is probably due to the fact, Makefiles come from a long past where things were not as polish as today.... Nevertheless, I use them all the time.</p>
+<h2 id="example-of-makefile-for-php-script">Example of Makefile for PHP script</h2>
+<p>Source of inspiration:</p>
+<p>https://gist.github.com/B-Galati/ff6ad09aab746736bcf497f0fe67bca9</p>
+<h2 id="what-is-the-coding-style-guide-of-a-makefile">What is the coding style guide of a Makefile?</h2>
+<p>Makefile must be with indented with <strong>tabs</strong>. Fetch the <code>.editorconfig</code> file.</p>
+<pre><code class="sh">curl https://raw.githubusercontent.com/fabarea/dotfiles-minimal/master/.editorconfig &gt; .editorconfig
 </code></pre>
 
-<h1 id="example-rule">Example rule</h1>
-<h1 id="allow-outgoing-www">Allow outgoing www</h1>
-<pre><code>iptables -A OUTPUT -p tcp --sport 513:65535 --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --sport 80 --dport 513:65535 -j ACCEPT
-</code></pre>
+<h2 id="what-could-be-a-makefile-scaffold">What could be a Makefile scaffold?</h2>
+<pre><code class="makefile">CLI_IMAGE ?= &quot;fab1en/athenapdf&quot;
 
-<h2 id="list-rules">LIST RULES</h2>
-<pre><code>iptables -L
-</code></pre>
+P=&quot;\\033[34m[+]\\033[0m&quot;
 
-<h2 id="stop-firewall">STOP FIREWALL</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-</code></pre>
+help:
+    @echo
+    @echo &quot;  \033[34mpdf\033[0m – generate the PDF&quot;
+    @echo
 
-<h2 id="enable-rule">ENABLE RULE</h2>
-<pre><code>iptables -A INPUT -i eth0 -p tcp --dport 20:22 -j ACCEPT;
-iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
-</code></pre>
+pdf:
+    @echo &quot;  $(P) pdf&quot;
+    @docker run --rm --init -v $PWD:/home/marp/app/ $(CLI_IMAGE)
 
-<h2 id="enable-dns-otherwise-slow-down-ssh-login">ENABLE DNS (OTHERWISE SLOW DOWN SSH LOGIN)</h2>
-<pre><code>iptables -A INPUT -p udp -s \$ISP_DNS_IP/32 --source-port 53 -d 0/0 -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT -&gt; (A TESTER)
-iptables -A INPUT -p udp --sport 53 -j ACCEPT -&gt; (A TESTER)
-</code></pre>
-
-<h2 id="accept-ping">ACCEPT PING</h2>
-<pre><code>iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-</code></pre>
-
-<h2 id="save-iptables">SAVE IPTABLES</h2>
-<pre><code>sudo sh -c &quot;iptables-save &gt; /etc/iptables.rules&quot;
-iptables-save &gt; /etc/iptables.rules
-</code></pre>
-
-<h2 id="restore-iptables-set-up">RESTORE IPTABLES SET UP</h2>
-<pre><code>echo '#!/bin/sh' &gt; /etc/network/if-pre-up.d/iptables-load
-echo &quot;iptables-restore &lt; /etc/iptables.rules&quot; &gt;&gt; /etc/network/if-pre-up.d/iptables-load
-chmod +x /etc/network/if-pre-up.d/iptables-load
-</code></pre>
-
-<p>hint: to set up an automatic save "if-post-down"
-https://help.ubuntu.com/community/IptablesHowTo</p>
-<h2 id="example-config-with-multiport">EXAMPLE CONFIG WITH MULTIPORT</h2>
-<pre><code>iptables -P INPUT ACCEPT; iptables -F
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -m multiport -p tcp --dport www,ssh,sftp,https -j ACCEPT
-iptables -A INPUT -p udp -s 0/0 --sport 53 -j ACCEPT
-iptables -A INPUT -i eth0 -p icmp -j ACCEPT
-iptables -A INPUT -j LOG -m limit
-iptables -A INPUT -j REJECT
-
-iptables -L
+.PHONY: help pdf
 </code></pre>
                 
                   
@@ -799,7 +833,7 @@ iptables -L
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../editor-sublime.learn/" title="Sublime" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../machine-learning.learn/" title="Machine-learning" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -808,19 +842,19 @@ iptables -L
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Sublime
+                Machine-learning
               </span>
             </div>
           </a>
         
         
-          <a href="../firewall-ufw.learn/" title="Firewall - UFW" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../php-composer.learn/" title="PHP - Composer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Firewall - UFW
+                PHP - Composer
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
