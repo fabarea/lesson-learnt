@@ -7,11 +7,11 @@ title: PHP - PHPCS
 phpcs --config-set default_standard KingKludge
 
 ```
-phpcs --extensions=php DistributionPackages/Visol.JungfrauReports --report=diff
+phpcs --extensions=php Classes --report=diff
 ```
 
 To automatically fixed, execute `phpcbf`
 
 ```bash
-phpcbf --extensions=php DistributionPackages/Visol.JungfrauReports
+phpcbf --extensions=php Classes/
 ```

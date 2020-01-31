@@ -1,6 +1,4 @@
 ---
-date: 2019-03-21T18:11:17.000Z
-public: true
 tags:
   - blockchain
   - gridcoin
@@ -30,15 +28,46 @@ https://steemit.com/gridcoin/@sc-steemit/solo-mining-a-guide-trough-magnitude-ne
 https://steemit.com/gridcoin/@delordsquest/mining-cryptocurrencies-don-t-repeat-my-mistakes-gridcoin
 execute advertisebeacon
 
-# check open project
+## check open project
 
     https://gridcoin.us/Guides/whitelist.htm <--
     https://gridcoin.io/
 
-# Headless server
+## How to setup Boinc in headless mode?
 
-apt install boinc
-boinccmd --join_acct_mgr https://www.grcpool.com fab1en uNaahzizibTHrDMaVyAP7DVYobrbXsNj
+```sh
+# Installation
+sudo apt install boinc
+
+# Join the bool and add new projects. 
+# Execute the first command twice if `sync` is not avaiable.
+boinccmd --join_acct_mgr https://www.grcpool.com fab1en <private.note>
+boinccmd --acct_mgr sync
+
+# Define the mode "auto" which is smart.
+boinccmd --set_run_mode auto
+
+# Get the status. We should see some project in the first section
 boinccmd --get_state
+boinccmd --get_cc_status (?)
+
+# List of tasks
+boinccmd --get_tasks
+
+# Start / stop the service
+service boinc-client stop
+
+# Directory where the date is stored
 cd /var/lib/boinc-client
+```
+
+More commands:
+
+https://boinc.berkeley.edu/wiki/Boinccmd_tool
+
+How to connect  the Boinc local client with a remote Boinc server?
+------------------------------------------------------------------
+
+Resources:
+
 https://www.youtube.com/watch?v=RrCsWqr6b1w

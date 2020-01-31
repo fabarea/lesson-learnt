@@ -1,5 +1,4 @@
 ---
-date: 2019-03-21T10:39:14.000Z
 title: Firewall - UFW
 ---
 
@@ -7,17 +6,24 @@ title: Firewall - UFW
 
 Here are few commands with `ufw` (Uncomplicated Firewall)
 
-```bash
-# Configure services
+```sh
+# Add some default rules
+ufw default deny incoming
+ufw allow 22
+
+# Same can done with the application name
 ufw app list
 ufw allow OpenSSH
 
 # Enable UFW
 ufw enable
-ufw status
+ufw status [verbose]
 
 # Disable UFW
 ufw disable
+
+# Delete a rule
+ufw delete allow 80/tcp
 ```
 
 Source:

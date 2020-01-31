@@ -11,6 +11,13 @@ What are the presentation tools ?
 
 I like to write my presentation / slides in Markdown and transform them afterward in web slides / PDF. Although it does not produce the most beautiful presentation with sparkling effects and so on, It allows to just concentrate on the content. For quite some time I was using [cleaver](https://nosir.github.io/cleave.js/) which is a nice and straightforward tool. The downside is that it can not generate PDF which is required in the academic world as "proove of work". That's because I recently move to [Marp](https://marp.app) that looks quite ambitious: Markdown Presentation Ecosystem. I am still experimenting a bit with this tool but it looks quite complete. 
 
+HackMD - Collaborative Markdown Knowledge Base
+----------------------------------------------
+
+Just spotted this new tool. There is a slide show template. 
+
+https://hackmd.io/
+
 Marp
 ----
 
@@ -70,8 +77,6 @@ mkdocs
 ------
 
 Another option, I am keeping on the radard is [https://www.mkdocs.org](https://www.mkdocs.org/) with the [material design theme](https://squidfunk.github.io/mkdocs-material/). The theme is fully responsive and displays a table of content on the right. This is a python tools which must be installed via pip. On my system (Ubuntu 18.04 as of writing) I had to run
-
-
 
 ```bash
 # I guess with Ubuntu 20.04 it can be python-pip since python 3 will be the default

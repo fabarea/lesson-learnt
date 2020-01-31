@@ -17,25 +17,60 @@ Install Testing Framework
 4.  Edit configuration and TYPO3_PATH_ROOT = /Users/fudriot/
 5.  Default configuration should be taken from EXT:core
 
+How can I run TYPO3 unit tests?
+----------
+
+For TYPO3 core:
+
+```php
+vendor/bin/phpunit -c typo3/sysext/Core/Build/UnitTest.xml
+```
+
+For a TYPO3 extension:
+
+```php
+vendor/bin/phpunit -c vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml web/typo3conf/ext/userjungfrausite/Tests/Unit/
+```
+
+It can be hand to have a quick `Makefile` to watch the file system and run the Unit Tests on file change.
+
+```makefile
+VENDOR ?= "../../../../vendor"
+
+P="\\033[34m[+]\\033[0m"
+
+help:
+	@echo
+	@echo "  \033[34munit-tests\033[0m – Unit test the extension."
+	@echo "  \033[34mwatch\033[0m      – Watch the PHP unit files and run unit tests upon file change."
+	@echo
+
+unit-tests:
+	@echo "  $(P) Unit Tests"
+	@$(VENDOR)/bin/phpunit -c $(VENDOR)/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit
+
+watch:
+	@echo "  $(P) Unit Tests"
+	@while inotifywait -e close_write Tests/Unit/* -e close_write Classes/Service/*; do make unit-tests; done
+
+.PHONY: help unit-tests watch
+```
+
+
+
 A php.ini scanner for best security practices
 ---------------------------------------------
 
 <https://github.com/psecio/iniscan> (instruction how to install was not accurate, wrote an issue)
 
-An application for building and managing Phars.
------------------------------------------------
-
-<http://box-project.org/>
-
-Coverall files to be analysed
------------------------------
-
-<https://coveralls.io/>
-
-Wrapper
+We can use a PHP wrapper
 -------
 
+TODO: check with me!
+
+```sh
 /Users/fudriot/Forge/PHPUnit/bin/php
+```
 
 Helmut blog
 -----------
@@ -72,40 +107,52 @@ typo3/sysext/impexp/Tests/Functional/ImportFromVersionFourDotFive/PagesAndTtCont
     /**
      * @return void
      */
-    public function setUp() {
+    public function setUp() 
+    {
         parent::setUp();
+    }
     
-        // Force the storage record to be caseSensitive "1" and prevent on-the-fly
-        // storage creation which is dependant on the OS .
-        $this->importDataSet(__DIR__ . '/../../Fixtures/Database/sys_file_storage.xml');
+    /**
+     * @return void
+     */
+    public function tearDown() 
+    {
+        parent::tearDown();
     }
 
-Protected
-=========
+How can I test a protected method?
+---------
 
-     $method = new \\ReflectionMethod('Foo', 'doSomethingPrivate');
-    $method->setAccessible(TRUE);
-    $this->assertEquals('blah', $method ->invoke(new Foo()));
-
-<https://sebastian-bergmann.de/archives/881-Testing-Your-Privates.html>
-
-<https://coveralls.io/>
+```php
+$method = new \ReflectionMethod(
+    \ClassName::class,
+    'buildUrl'
+);
+$method->setAccessible(TRUE);
+$this->assertEquals(
+    'blah',
+    $method->invoke(new \ClassName(), 'args1')
+);
+```
 
 Test Double
 -----------
 
- $extractorObject1 = $this->getMock(\\TYPO3\\CMS\\Core\\Resource\\Index\\ExtractorInterface::class, array(), array(), $extractorClass1); $extractorObject1->expects($this->any())->method('getPriority')->will($this->returnValue(1));
+```php
+$extractorObject1 = $this->getMock(
+    \TYPO3\CMS\Core\Resource\Index\ExtractorInterface::class,
+    array(),
+    array(),
+    $extractorClass1
+);
 
-Install
--------
-
-1) Install phpunit from website
-2) composer install --dev (from remote)
-
-Unit Test
----------
-
-phpunit -c typo3/sysext/core/Build/UnitTests.xml typo3/sysext/core/Tests/Unit/Resource
+$extractorObject1
+    ->expects(
+        $this->any()
+    )
+    ->method('getPriority')->will($this->returnValue(1))
+);
+```
 
 Functional Test
 ---------------
@@ -139,37 +186,7 @@ With phpunit from composer, the command to run tests is
 More documentation about that can be found at
 <http://wiki.typo3.org/Unit_Testing_TYPO3>
 
-With TYPO3
-----------
-
-./typo3conf/ext/phpunit/Composer/vendor/bin/phpunit --colors -v --process-isolation --bootstrap typo3/sysext/core/Build/FunctionalTestsBootstrap.php typo3/sysext/core/Tests/Functional/Category/Collection/CategoryCollectionTest.php
-
-(to be tested? Needed?)
-
-php typo3/cli_dispatch.phpsh phpunit typo3/sysext/core/Tests/Functional/Category/Collection/CategoryCollectionTest.php
-
-Are there some special arguments to add for this test to run properly? It says the same thing as with the BE module: "Functional tests must be called through phpunit on CLI".
-
-I tried running the test directly via the phpunit PHAR, using:
-
-phpunit typo3/sysext/core/Tests/Functional/Category/Collection/CategoryCollectionTest.php
-
-but then I get the following error:
-
-"Fatal error: Class 'TYPO3\\CMS\\Core\\Tests\\FunctionalTestCase' not found in /usr/local/src/typo3/Core/typo3/sysext/core/Tests/Functional/Category/Collection/CategoryCollectionTest.php on line 33"
-
-A Script To Remove PHP Closing Tags
------------------------------------
-
-To be done on a Linux system
-<http://bryan.ravensight.org/2010/07/remove-php-closing-tag/>
-
-PHPUNIT
--------
-
-phpunit -c typo3/sysext/Core/Build/UnitTest.xml
-
-filter test
+Filter test
 -----------
 
     •   you can use the @group tag in the class documentation to indicate the group and then run tests only on that group using --group
@@ -269,17 +286,23 @@ Getting familiar with PHPUnit Mocks (CakePHP)
 
 <http://mark-story.com/posts/view/getting-familiar-with-phpunit-mocks>
 
+
+
+```php
 $mock = $this->getMock('Thing');
 $mock->expects($this->at(0))->method('send')
-    \->with('one', 'two')
-    \->will($this->returnValue(true));
+    ->with('one', 'two')
+    ->will($this->returnValue(true));
 
-    •   once() Will fail if the method is called more than once, or less than once.
-    •   never() Will fail if the method is called ever.
-    •   any() Will always match
-    •   at($index) Will match at call $index. A very important and possibly irritating difference between the SimpleTest implementation is the index increments each time a mock method is called, not just when the indicated method is called.
-    •   exactly($times) Will only pass if the method is called $times. I find this one doesn’t work well with with().
-    •   atLeastOnce() Will pass if the method is called more than once.
+/*
+•   once() Will fail if the method is called more than once, or less than once.
+•   never() Will fail if the method is called ever.
+•   any() Will always match
+•   at($index) Will match at call $index. A very important and possibly irritating difference between the SimpleTest implementation is the index increments each time a mock method is called, not just when the indicated method is called.
+•   exactly($times) Will only pass if the method is called $times. I find this one doesn’t work well with with().
+•   atLeastOnce() Will pass if the method is called more than once.
+*/
+```
 
 Usually, the next thing in the chain is a method($methodName) call, which specifies which method the expectation is for. Following method() is usually one or both of with() and will(). Parameter expectations are supplied as parameters to with(). You can either supply the literal values you are expecting, or one of the many constraint objects PHPUnit has. Return values for mocked methods are set with will(). Will accepts a ‘stub’ as its parameter, and there are several built in stub types.
     •   returnValue($value) Return a literal value, like a string or an array or a boolean.
@@ -289,7 +312,7 @@ Usually, the next thing in the chain is a method($methodName) call, which specif
     •   onConsecutiveCalls() Allows you to setup a return value ‘script’. This allows you to setup a number of return values that will be returned in the sequence they are provided. This stub works best with either any() or atLeastOnce() in my experience.
 
 Slides about new features in PHPUnit 3.3
-========================================
+----------------------------------------
 
 BEHAVIOUR DRIVEN DEVELOPMENT
 ----------------------------
@@ -321,15 +344,20 @@ VFSSTREAM - MOCKING FILE
 Exception with phpunit
 ----------------------
 
- /\*\*
-
-*   @expectedException MyExceptionClass
-*   @expectedExceptionMessage Array too small
-    \*/
+```php
+ /**
+  * @expectedException MyExceptionClass
+  * @expectedExceptionMessage Array too small
+  */
+```
 
 OR
 
+```php
 $this->setExpectedException('Exception');
+```
+
+
 
 Improved Skeleton Generator in PHPUnit 3
 ----------------------------------------

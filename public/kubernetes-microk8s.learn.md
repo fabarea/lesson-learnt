@@ -1,5 +1,4 @@
 ---
-date: 2019-11-21T12:51:39+01:00
 title: Kubernetes - MicroK8s
 ---
 

@@ -48,7 +48,6 @@ docker tag local-image:tagname new-repo:tagname
 docker commit -a "Author" local-container fab1en/doxygen
 docker push fab1en/doxygen
 
-
 tail -f /var/log/supervisor/supervisord.log 
 ```
 
@@ -88,6 +87,8 @@ FROM debian:jessie
 How can I enter container ?
 ---------------------------
 
+We should used  `exec` instead of `run`. The command "run" will create a new container whereas "exec" will be used to manipulate a running instance. 
+
 ```sh
 # Selenium
 docker-compose exec selenium-chrome /bin/bash
@@ -96,12 +97,12 @@ sudo su
 # if CMD["/bin/bash"] we can omit the shell
 docker run -it --rm debian
 
-# typo3.local
-docker-compose exec typo3.local su www-data
+# With docker-compose. Assuming "db" is the service name
+docker-compose exec db bash
+docker-compose exec db su www-data
 
 # If the container has an entry point we must override it, for instance:
-$  docker run --entrypoint "sh" -it --rm marpteam/marp-cli
-
+docker run --entrypoint "sh" -it --rm marpteam/marp-cli
 ```
 
 Dockerizing a Node.js web app
@@ -228,10 +229,15 @@ A Not Very Short Introduction to Docker
 How to inspect the container?
 -------
 
-```
+```sh
+# Tell the image used to build the container
 docker inspect -f "{{ .Config.Image }}" web
-docker inspect -f "{{ .HostConfig.Links }}" web
+
+# Tell the IP address of the given container
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web
 ```
+
+How do I know the IP of the 
 
 How to remove all stopped containers?
 ------------------------------
