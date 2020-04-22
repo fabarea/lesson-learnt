@@ -5,55 +5,57 @@ title: TYPO3 - Install
 
 **Beta quality! Rework content**
 
-There are various way to install TYPO3-
+## How to install TYPO3?
 
-## Comment installer TYPO3?
+First we need to download the sources
 
-- Clone du Core + ddev
-  https://docs.typo3.org/m/typo3/guide-contributionworkflow/master/en-us/Appendix/SettingUpTypo3Ddev.html
-  - Incovénient: à tester si on ne peut pas faire un require de "typo3/cms-introduction"
-- Depuis composer.typo3.org, ensuite:
+```bash
+# TYPO3 v9
+mkdir typo3.lan; cd typo3.lan
+composer require --ignore-platform-reqs -v typo3/cms-introduction:4.0 
 
-  - composer create-project typo3/cms-base-distribution CmsBaseDistribution ^9
-  - Si nécessaire récupérer une composer d'une autre version
-    https://github.com/TYPO3/TYPO3.CMS.BaseDistribution/
-    `composer update` si nécessaire
-  - ajouter / copier un ddev existant
-    `cp -r ~/Work/Ecodev/graduatecampus/.ddev .`
-  - composer require typo3/cms-introduction
+# Remarks:
+# 1. flag "--ignore-platform-reqs" is required if running >= PHP 7.4
+# 2. typo3/cms-introduction has a dependency to bk2k/bootstrap-package
+# 3. Checkout all depdendencies at
+#    https://packagist.org/packages/typo3/cms-introduction
 
-- Depuis ce projet https://github.com/helhum/TYPO3-Distribution/
-  - Inconvénient: opiniated distribution
+# TYPO3 v10
+composer require typo3/cms-introduction
 
-TODO: DDEV... write something about it since I am using it intensively.
-
-Boostrap Package
-----------------
-
-    # TYPO3 v9
-    composer require bk2k/bootstrap-package
-    composer require typo3/cms-introduction
-    
-    # TYPO3 v8
-    
-    git clone https://github.com/TYPO3/TYPO3.CMS.BaseDistribution/tree/8.x (?)
-    
-    composer require bk2k/bootstrap-package ^8.0
-    composer require typo3/cms-introduction ^3.0
+# TYPO3 v8
+git clone https://github.com/TYPO3/TYPO3.CMS.BaseDistribution/tree/8.x (?)
+composer require --ignore-platform-reqs typo3/cms-introduction ^3.0
+```
 
 
-    php vendor/bin/typo3cms install:setup \
-        --non-interactive \
-        --database-user-name=root \
-        --database-user-password=root \
-        --database-host-name=127.0.0.1 \
-        --database-port=3306 \
-        --database-name=ebelaurorech \
-        --admin-user-name=admin \
-        --admin-password=password \
-        --site-setup-type=ebelaurore.ch
+```bash
+php vendor/bin/typo3cms install:setup \
+    --non-interactive \
+    --database-user-name=root \
+    --database-user-password=root \
+    --database-host-name=127.0.0.1 \
+    --database-port=3306 \
+    --database-name=ebelaurorech \
+    --admin-user-name=admin \
+    --admin-password=password \
+    --site-setup-type=ebelaurore.ch
+```
 
-set TYPO3_CONTEXT Development php -S localhost:8000 -t public
+Then we need to start a web server with the following commands
+
+```bash
+# Run in Development context
+export TYPO3_CONTEXT=Development; php -S localhost:8000 -t public
+
+# With fish shell
+set TYPO3_CONTEXT Development; php -S localhost:8000 -t public
+
+# Simply run the web server
+php -S localhost:8000 -t public
+```
+
+
 
 ## Typical composer.json
 

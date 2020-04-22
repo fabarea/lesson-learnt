@@ -161,9 +161,11 @@ set -e	# exit the script if any statement returns non-true return value
 set -u	# abort on unbound variable
 set -o pipefail  # don't hide errors within pipes
 
-# Short version
-set -euo pipefail
+# Exit the script on error and unbound variable
+set -eu
 
+# Exit the script on error, unbound variable and erreors in pipes
+set -euo pipefail
 ```
 
 Return a status code

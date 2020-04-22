@@ -1,5 +1,5 @@
 ---
-title: Boinc
+https://blog.jetbrains.com/idea/2019/06/managing-code-style-on-a-directory-level-with-editorconfig/title: Boinc
 ---
 
 CLI

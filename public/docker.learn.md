@@ -28,7 +28,6 @@ docker run -it --rm ubuntu:14.04
 docker ps -a
 
 docker-kill-all
-
 docker-clean-containers
 
 docker run -it -p 49800:80 -p 49801:6081 fudriot/drupal /bin/bash
